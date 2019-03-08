@@ -23,7 +23,7 @@ docker network create --driver bridge $nome_rede
 # Verificando redes docker/ deverá aparecer então a rede postgres-network
 docker network ls 
 
-# Criando um container para executar uma instância do PostgreSQL
+# Criando um container para executar as imagens do PostgreSQL
 echo 'Insira a senha do POSTGRES: '
 read senha_postgres
 docker run --name $nome_rede-postgres --network=$nome_rede -e "POSTGRES_PASSWORD=$senha_postgres" -p 5432:5432 -v /home/Docker/containers/PostgreSQL:/var/lib/postgresql/data -d postgres
