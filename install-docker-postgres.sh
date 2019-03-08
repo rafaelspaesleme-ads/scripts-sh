@@ -6,7 +6,7 @@
 # Create per Rafael Paes Leme
 
 # Instalando Docker
-curl -sSL https://get.docker.com/ | sh 
+# curl -sSL https://get.docker.com/ | sh 
 
 # Obtendo as imagens necessárias
 # Imagem do postresql
@@ -16,7 +16,9 @@ docker pull postgres
 docker pull dpage/pgadmin4 
 
 # Criando uma network para execução dos containers
-docker network create --driver bridge postgres-network 
+echo 'Dê um nome para sua rede docker que hospedará o MySQL: '
+read nome_rede
+docker network create --driver bridge $nome_rede
 
 # Verificando redes docker/ deverá aparecer então a rede postgres-network
 docker network ls 
@@ -24,7 +26,7 @@ docker network ls
 # Criando um container para executar uma instância do PostgreSQL
 echo 'Insira a senha do POSTGRES: '
 read senha_postgres
-docker run --name teste-postgres --network=postgres-network -e "POSTGRES_PASSWORD=$senha_postgres" -p 5432:5432 -v /home/renatogroffe/Desenvolvimento/PostgreSQL:/var/lib/postgresql/data -d postgres 
+docker run --name $nome_rede-postgres --network=$nome_rede -e "POSTGRES_PASSWORD=$senha_postgres" -p 5432:5432 -v /home/Docker/containers/PostgreSQL:/var/lib/postgresql/data -d postgres
 
 # Verificando se container esta ativo
 docker ps 
@@ -34,14 +36,16 @@ echo 'Insira o email do pgAdmin4: '
 read email_pgadmin
 echo 'Insira a senha do pgAdmin4: '
 read senha_pgadmin
-docker run --name teste-pgadmin --network=postgres-network -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=$email_pgadmin" -e "PGADMIN_DEFAULT_PASSWORD=$senha_pgadmin" -d dpage/pgadmin4 
+docker run --name $nome_rede-pgadmin --network=$nome_rede -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=$email_pgadmin" -e "PGADMIN_DEFAULT_PASSWORD=$senha_pgadmin" -d dpage/pgadmin4
 
 # Verificando se container esta ativo
 docker ps 
 
 # Abrindo o container na pagina web
 # Verificando qual IP da imagem em questao
-ifconfig -a 
+echo 'Insira o ID do container: '
+read ID_container
+docker inspect $ID_container | grep "IPAddress"
 
 # Insira o ip do jenkins
 echo 'Insira o IP do container do pgAdmin4: '

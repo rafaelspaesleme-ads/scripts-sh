@@ -6,4 +6,5 @@
 # Create per Rafael Paes Leme
 
 # Instalando Docker
+echo 'Instalando docker... . . .  .  .  .'
 curl -sSL https://get.docker.com/ | sh

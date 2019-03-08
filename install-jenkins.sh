@@ -4,6 +4,8 @@
 # Executado num ambiente Debian 8 com 2048 MB de memória;
 # Create per Rafael Paes Leme
 
+# ============================= AINDA EM DESENVOLVIMENTO =============================
+
 # =============== Passo 1 - Instalando Jenkins
 # Adicionando chave do repositorio jenkins ao S.O.
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add - 

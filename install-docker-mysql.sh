@@ -1,4 +1,4 @@
-CHM#!/bin/sh
+#!/bin/sh
 # Script para:
 # MySQL + Docker: executando uma instância e o mysql a partir de containers
 # Execute esse script como root
@@ -6,51 +6,59 @@ CHM#!/bin/sh
 # Create per Rafael Paes Leme
 
 # Instalando Docker
-curl -sSL https://get.docker.com/ | sh
+# curl -sSL https://get.docker.com/ | sh
 
 # Criando rede para executar o container
-docker network create --driver bridge mysql-network
+echo 'Dê um nome para sua rede docker que hospedará o MySQL: '
+read nome_rede
+docker network create --driver bridge $nome_rede
 
 # Criando o container MySQL
 # Criando diretorio para dados do database
 mkdir -p /opt/mysql
 
 # Inserindo senha MySQL
-echo 'Crie a senha MySQL (que servira tambem ao phpMyAdmin): '
+echo 'Crie a senha MySQL: '
 read senha_mysql
 
 # Criando container MySQL
-docker run -d \ 
-    --name mysql-network-mysql \ 
-    --network mysql-network \ 
-    -e MYSQL_ROOT_PASSWORD=$senha_mysql \ 
-    -v /opt/mysql:/var/lib/mysql \ 
-    -p 3306:3306 \ 
+docker run -d \
+    --name $nome_rede-mysql \
+    --network $nome_rede \
+    -e MYSQL_ROOT_PASSWORD=$senha_mysql \
+    -v /opt/mysql:/var/lib/mysql \
+    -p 3306:3306 \
     mysql:8.0.12
 
 # Criando container phpMyAdmin
 docker run -d \
-    --name mysql-network-phpmyadmin \
-    --network mysql-network \
-    -e PMA_HOST=mysql-network-mysql \
-    -p 8036:80 \
+    --name $nome_rede-phpmyadmin \
+    --network $nome_rede \
+    -e PMA_HOST=$nome_rede-mysql \
+    -p 3307:80 \
     phpmyadmin/phpmyadmin:edge
 
 # ativando permissoes
 chmod 777 /var/lib/mysql    
 
-echo '(WARNING) A senha de root sera vazio ou a mesma do MySQL!'
+# Inserindo senha de acesso ao phpMyAdmin
+echo 'Crie a senha do phpMyAdmin: '
+read senha_phpmyadmin
+docker exec -it mysql $nome_rede-phpmyadmin -u root -p$senha_mysql -e "ALTER USER root IDENTIFIED WITH mysql_native_password BY '$senha_phpmyadmin';"
+
 
 # Verificando se container esta ativo
 docker ps
 
 # Abrindo o container na pagina web
 # Verificando qual IP da imagem em questao
-ifconfig -a
+echo 'Insira o ID do container: '
+read ID_container
+docker inspect $ID_container | grep "IPAddress"
 
 # Insira o ip do jenkins
 echo 'Insira o IP do container do phpMyAdmin: '
 read host_ip_phpMyAdmin
 
 # Abrindo url do jenkins
-xdg-open http://$host_ip_phpMyAdmin:8036
+xdg-open http://$host_ip_phpMyAdmin:3307
