@@ -1,4 +1,4 @@
-#!/bin/sh
+CHM#!/bin/sh
 # Script para:
 # MySQL + Docker: executando uma instância e o mysql a partir de containers
 # Execute esse script como root
