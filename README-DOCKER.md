@@ -1,5 +1,3 @@
-![alt text](https://www.callicoder.com/assets/images/post/large/spring-boot-docker.jpg)
-
 # INSTALAÇÃO DO AMBIENTE DOCKER E COMPONENTES PARA DESENVOLVIMENTO
 
 ## AMBIENTE
@@ -15,7 +13,8 @@ Passos da instalação do ambiente de desenvolvimento dockerizado (Via remote sh
 ```
 PASSO #1
 
-# Abra o terminal linux local dentro da pasta principal do seu projeto SpringBoot
+# Abra o terminal linux local através do comando abaixo:
+Comando do teclado: CTRL + ALT + T
 
 -
 
@@ -55,12 +54,5 @@ curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-d
 curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/recovery-pass-mysql.sh | sh
 
 -
-
-PASSO #5
-
-# Criando Dockerfile, criando imagem Docker e levantando container (Aplicação Spring Boot)
-# Abra o terminal na pasta principal do seu projeto SpringBoot e execute o script abaixo.
-
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/create-dockerfile-spring.sh | sh
 
 ```
