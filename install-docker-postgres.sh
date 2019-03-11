@@ -63,6 +63,6 @@ read host_ip_pgadmin4
 
 # Abrindo url do pgAdmin 4
 # Ubuntu
-xdg-open http://$host_ip_pgadmin4:15432
+# xdg-open http://$host_ip_pgadmin4:15432
 # Servidor
-curl http://$host_ip_pgadmin4:15432
+# curl http://$host_ip_pgadmin4:15432
