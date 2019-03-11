@@ -11,7 +11,7 @@ echo '=== = =                                            = = ==='
 echo '+========================================================+'
 
 echo 'Buildando sua aplicação... . . .  .  .  .'
-# mvn clean install
+mvn clean install
 #imagem do pacote de execucao da apicacao em questao
 # FROM openjdk:8-jdk-slim
 echo 'Abaixo você vai inserir a imagem referente a sua aplicação.'
@@ -26,6 +26,7 @@ read from_image
 echo 'Dê o nome ao diretorio de trabalho que ficará dentro do container:'
 read workdir_app
 
+echo 'Você precisará abrir o arquivo pom.xml do seu projeto e deixa-lo aberto em segundo plano.'
 #Copie o .jar no diretório de trabalho
 # COPY target/JavaSpringCRUD-0.0.1-SNAPSHOT.jar /app
 echo 'Insira o nome do parametro "name" contido no arquivo pom.xml: '
@@ -56,3 +57,30 @@ j_jar='-jar'
 cmd_exec="[$aspas$j_java$aspas,$aspas$j_jar$aspas,$aspas$app_jar$aspas]"
 
 echo "FROM $from_image\nWORKDIR /$workdir_app\nCOPY target/$app_jar /$version_snap\nEXPOSE $port_app\nCMD $cmd_exec" >> Dockerfile
+
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo '======= = -   DOCKERFILE CRIADO COM SUCESSO!   - = ======='
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
+echo '-'
+echo '-'
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo '======= = - INICIANDO DOCKERIZAÇÃO DA APLICAÇÃO - = ======'
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
+
+echo '-'
+echo '-'
+
+# Criando imagem docker da aplicação
+echo 'Digite um nome para ser sua imagem Docker: '
+read my_image_docker
+docker build -t $my_image_docker .
+
+# Usando a imagem para criar um container em execução
+docker run $my_image_docker
+
+# Verificando se container esta ativo
+docker ps

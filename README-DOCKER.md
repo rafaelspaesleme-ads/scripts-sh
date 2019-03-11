@@ -13,7 +13,7 @@ Passos da instalação do ambiente de desenvolvimento dockerizado (Via remote sh
 ```
 PASSO #1
 
-# Abra o terminal linux local (Comando atalho Ubuntu 18.04: CTRL + ALT + T)
+# Abra o terminal linux local dentro da pasta principal do seu projeto SpringBoot
 
 -
 
@@ -56,7 +56,7 @@ curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/recovery-
 
 PASSO #5
 
-# Dockerizando aplicação (Aplicação Spring Boot)
+# Criando Dockerfile (Aplicação Spring Boot)
 # Abra o terminal na pasta principal do seu projeto SpringBoot e execute o script abaixo.
 
 curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/create-dockerfile-spring.sh | sh
