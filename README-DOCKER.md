@@ -1,3 +1,5 @@
+![alt text](https://www.callicoder.com/assets/images/post/large/spring-boot-docker.jpg)
+
 # INSTALAÇÃO DO AMBIENTE DOCKER E COMPONENTES PARA DESENVOLVIMENTO
 
 ## AMBIENTE
