@@ -7,7 +7,11 @@
 
 # Instalando Docker
 # curl -sSL https://get.docker.com/ | sh 
-
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo '======== ===== - DOCKERIZANDO  POSTGRESQL - ===== ========'
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
 # Obtendo as imagens necessárias
 # Imagem do postresql
 docker pull postgres 
@@ -16,7 +20,7 @@ docker pull postgres
 docker pull dpage/pgadmin4 
 
 # Criando uma network para execução dos containers
-echo 'Dê um nome para sua rede docker que hospedará o MySQL: '
+echo 'Dê um nome para sua rede docker que hospedará o PostgreSQL: '
 read nome_rede
 docker network create --driver bridge $nome_rede
 
@@ -38,6 +42,12 @@ echo 'Insira a senha do pgAdmin4: '
 read senha_pgadmin
 docker run --name $nome_rede-pgadmin --network=$nome_rede -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=$email_pgadmin" -e "PGADMIN_DEFAULT_PASSWORD=$senha_pgadmin" -d dpage/pgadmin4
 
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo '====+ - STATUS DA INSTALAÇÃO DO POSTGRES E PGAGMIN - +===='
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
+
 # Verificando se container esta ativo
 docker ps 
 
@@ -47,9 +57,12 @@ echo 'Insira o ID do container: '
 read ID_container
 docker inspect $ID_container | grep "IPAddress"
 
-# Insira o ip do jenkins
+# Insira o ip do pgAdmin 4
 echo 'Insira o IP do container do pgAdmin4: '
 read host_ip_pgadmin4
 
-# Abrindo url do jenkins
+# Abrindo url do pgAdmin 4
+# Ubuntu
 xdg-open http://$host_ip_pgadmin4:15432
+# Servidor
+curl http://$host_ip_pgadmin4:15432

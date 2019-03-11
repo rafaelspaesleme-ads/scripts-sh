@@ -8,6 +8,12 @@
 # Instalando Docker
 # curl -sSL https://get.docker.com/ | sh
 
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo '======== ===== -    DOCKERIZANDO MYSQL -    ===== ========'
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
+
 # Criando rede para executar o container
 echo 'Dê um nome para sua rede docker que hospedará o MySQL: '
 read nome_rede
@@ -39,13 +45,18 @@ docker run -d \
     phpmyadmin/phpmyadmin:edge
 
 # ativando permissoes
-chmod 777 /var/lib/mysql    
+# chmod 777 /var/lib/mysql    
 
 # Inserindo senha de acesso ao phpMyAdmin
 echo 'Crie a senha do phpMyAdmin: '
 read senha_phpmyadmin
 docker exec -it mysql $nome_rede-phpmyadmin -u root -p$senha_mysql -e "ALTER USER root IDENTIFIED WITH mysql_native_password BY '$senha_phpmyadmin';"
 
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo '====+ - STATUS DA INSTALAÇÃO DO MYSQL E PHPMYADMIN - +===='
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
 
 # Verificando se container esta ativo
 docker ps
@@ -62,3 +73,4 @@ read host_ip_phpMyAdmin
 
 # Abrindo url do jenkins
 xdg-open http://$host_ip_phpMyAdmin:3307
+curl http://$host_ip_phpMyAdmin:3307
