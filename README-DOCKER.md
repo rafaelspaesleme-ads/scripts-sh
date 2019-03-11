@@ -52,5 +52,12 @@ curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-d
 
 curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/recovery-pass-mysql.sh | sh
 
+-
+
+PASSO #5
+
+# Dockerizando aplicação (Aplicação Spring Boot)
+
+
 
 ```
