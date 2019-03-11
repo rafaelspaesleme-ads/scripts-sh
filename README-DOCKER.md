@@ -58,7 +58,7 @@ curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/recovery-
 
 PASSO #5
 
-# Criando Dockerfile (Aplicação Spring Boot)
+# Criando Dockerfile, criando imagem Docker e levantando container (Aplicação Spring Boot)
 # Abra o terminal na pasta principal do seu projeto SpringBoot e execute o script abaixo.
 
 curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/create-dockerfile-spring.sh | sh
