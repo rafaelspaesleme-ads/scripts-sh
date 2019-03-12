@@ -11,25 +11,35 @@
 # xdg-open http://$host_ip_jenkins:8080
 
 # docker network create -d macvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1  -o parent=eth0 pub_net
-apt update
-apt install git
-git --version
+# wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/01-netcfg.yaml
+touch 01-netcfg.yaml
+chmod 777 01-netcfg.yaml
 
-# Instalando dependencias do Git
-apt update
-apt install make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
+echo 'Digite o ip fixo: (Ex.: 192.168.0.170)'
+read edit_ip_fixo
+echo 'Digite o gateway: (Ex.: 192.168.0.1)'
+read edit_ip_gateway
+echo 'Digite o DNS 1: (Ex.: 8.8.8.8)'
+read edit_dns_1
+echo 'Digite o DNS 2: (Ex.: 8.8.4.4)'
+read edit_dns_2
 
-cd ~
-git clone https://github.com/git/git.git
-cd git
-make prefix=/usr/local all
-make prefix=/usr/local install
-git --version
+echo "--- " >> 01-netcfg.yaml
+echo "network: " >> 01-netcfg.yaml
+echo "  ethernets: " >> 01-netcfg.yaml
+echo "    enp0s8: " >> 01-netcfg.yaml
+echo "      addresses: " >> 01-netcfg.yaml
+echo "        - $edit_ip_fixo/24" >> 01-netcfg.yaml
+echo "      dhcp4: false" >> 01-netcfg.yaml
+echo "      dhcp6: false" >> 01-netcfg.yaml
+echo "      gateway4: \"$edit_ip_gateway\"" >> 01-netcfg.yaml
+echo "      nameservers: " >> 01-netcfg.yaml
+echo "        addresses: " >> 01-netcfg.yaml
+echo "          - \"$edit_dns_1\"" >> 01-netcfg.yaml
+echo "          - \"$edit_dns_2\"" >> 01-netcfg.yaml
+echo "    ens32: " >> 01-netcfg.yaml
+echo "      dhcp4: true" >> 01-netcfg.yaml
+echo "  renderer: networkd" >> 01-netcfg.yaml
+echo "  version: 2" >> 01-netcfg.yaml
 
-# Configurando usuario git
-echo 'Digite seu username do git: '
-read user_name_git
-echo 'Digite seu email do git: '
-read user_mail_git
-git config --global user.name "$user_name_git"
-git config --global user.email "$user_mail_git"
+mv 01-netcfg.yaml teste/
