@@ -38,4 +38,5 @@ docker pull bash
 # Criando imagem do Tomcat
 docker pull tomcat
 
-
+# Criando imagem do TypeScript
+docker pull sandrokeil/typescript

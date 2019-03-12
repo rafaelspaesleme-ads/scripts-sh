@@ -1,0 +1,17 @@
+--- 
+network: 
+  ethernets: 
+    enp0s8: 
+      addresses: 
+        - $edit_ip_fixo/24
+      dhcp4: false
+      dhcp6: false
+      gateway4: "$edit_ip_gateway"
+      nameservers: 
+        addresses: 
+          - "$edit_dns_1"
+          - "$edit_dns_2"
+    ens32: 
+      dhcp4: true
+  renderer: networkd
+  version: 2

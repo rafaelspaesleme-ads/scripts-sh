@@ -29,4 +29,5 @@ curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-d
 # Atualizando senha root do phpMyAdmin
 curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/recovery-pass-mysql.sh | sh
 
-# 
+# Instalando ambiente Jenkins-client
+curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-docker-jenkins.sh | sh
