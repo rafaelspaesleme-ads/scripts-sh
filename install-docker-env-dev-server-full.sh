@@ -5,6 +5,9 @@
 # Executado num ambiente Debian 8 com 2048 MB de memória;
 # Create per Rafael Paes Leme
 
+# Instalando curl
+apt install curl
+
 # Configurando rede do servidor
 curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/config-network-server.sh | sh
 
