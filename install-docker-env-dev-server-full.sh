@@ -5,6 +5,9 @@
 # Executado num ambiente Debian 8 com 2048 MB de memória;
 # Create per Rafael Paes Leme
 
+# Configurando rede do servidor
+curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/config-network-server.sh | sh
+
 # Instalando ambiente Java
 curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-java.sh | sh
 
