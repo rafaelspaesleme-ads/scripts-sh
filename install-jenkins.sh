@@ -33,8 +33,8 @@ systemctl status jenkins
 
 
 # =============== Etapa 3 - Abrindo o Firewall
-# Por padrão, o Jenkins é executado na porta 8080, então vamos abrir essa porta usando ufw:
-ufw allow 8080 
+# Por padrão, o Jenkins é executado na porta 7474, então vamos abrir essa porta usando ufw:
+ufw allow 7474
 
 
 # Verifique ufwo status para confirmar as novas regras:
