@@ -30,22 +30,21 @@ chmod 777 /etc/ssh/ssh_config
 
 mv -f ssh_config /etc/ssh/
 
-# Realizando acesso via ssh
-sshpass -p "$pass_remote" ssh $user_remote@$ip_remote
+# Instalando wget
+apt-get install wget
+
+# Instalando curl
+apt-get install curl
+
+# Instalando git
+apt-get install git
+
+# Baixando scripts sh
+git clone https://github.com/rafaelspaesleme-ads/scripts-sh.git
+chmod -R 777 scripts-sh
 
 # transferencia de dados local para servidor
-scp -P z0612c -r folder zaal@192.168.0.91:/tmp 
+sshpass -p "$pass_remote" scp -r scripts-sh/ $user_remote@$ip_remote:/tmp 
 
-# Testando manipulação de dados dentro do acesso remoto
-mkdir teste
-
-touch teste.txt
-
-chmod 777 teste
-
-chmod 777 teste.txt
-
-mv -f teste.txt teste/
-
-echo 'Status do teste: '
-ls teste/
+# executando comando via ssh
+sshpass -p "$pass_remote" ssh $user_remote@$ip_remote /tmp/scripts-sh/example.sh
