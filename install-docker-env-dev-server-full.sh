@@ -31,8 +31,11 @@ echo '== == - Tenha um otimo trabalho!!!!          - == ========'
 echo '=== = =                                            = = ==='
 echo '+========================================================+'
 
+# Instalando wget
+apt-get install wget
+
 # Instalando curl
-apt install curl
+apt-get install curl
 
 # Fazendo conexão com o servidor via ssh
 curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/remote-access-ssh.sh | sh
