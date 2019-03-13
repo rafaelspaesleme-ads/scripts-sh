@@ -34,6 +34,8 @@ echo '+========================================================+'
 # Instalando curl
 apt install curl
 
+
+
 # Fazendo conexão com o servidor via ssh
 curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/remote-access-shh.sh | sh
 

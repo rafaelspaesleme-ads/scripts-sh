@@ -1,6 +1,6 @@
 #!/bin/sh
 # Script para:
-# Script de acesso remoto via ssh
+# Script de acesso remoto via ssh personalizado
 # Execute esse script como root
 # Executado num ambiente Debian 8 com 2048 MB de memória;
 # Create per Rafael Paes Leme
