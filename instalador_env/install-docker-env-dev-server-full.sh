@@ -37,14 +37,6 @@ apt-get install wget
 # Instalando curl
 apt-get install curl
 
-
-
-# Realizando download de scripts dependentes
-wget https://github.com/rafaelspaesleme-ads/scripts-sh/tree/master/instalador_env/
-
-# Fazendo conexão com o servidor via ssh
-wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/remote-access-ssh.sh
-
 # Configurando rede do servidor
 curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/config-network-server.sh | sh
 

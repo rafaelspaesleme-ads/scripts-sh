@@ -15,3 +15,7 @@
 
 mkdir /tmp/joao_e_maria_teste
 chmod 777 /tmp/joao_e_maria_teste
+
+echo "Digite algo: "
+read algo
+echo "algo é: $algo"

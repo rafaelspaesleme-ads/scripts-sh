@@ -24,7 +24,7 @@ read pass_remote
 apt install sshpass
 
 # configurando ssh_config
-wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/ssh_config
+wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/seg/ssh_config
 
 chmod 777 /etc/ssh/ssh_config
 
@@ -47,4 +47,4 @@ chmod -R 777 scripts-sh
 sshpass -p "$pass_remote" scp -r scripts-sh/ $user_remote@$ip_remote:/tmp 
 
 # executando comando via ssh
-sshpass -p "$pass_remote" ssh $user_remote@$ip_remote /tmp/scripts-sh/example.sh
+sshpass -p "$pass_remote" ssh $user_remote@$ip_remote /tmp/scripts-sh/instalador_env/example.sh
