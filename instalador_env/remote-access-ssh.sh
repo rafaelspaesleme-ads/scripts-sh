@@ -33,6 +33,9 @@ mv -f ssh_config /etc/ssh/
 # Realizando acesso via ssh
 sshpass -p "$pass_remote" ssh $user_remote@$ip_remote
 
+# transferencia de dados local para servidor
+scp -P z0612c -r folder zaal@192.168.0.91:/tmp 
+
 # Testando manipulação de dados dentro do acesso remoto
 mkdir teste
 

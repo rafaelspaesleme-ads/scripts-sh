@@ -38,7 +38,7 @@ apt-get install wget
 apt-get install curl
 
 # Fazendo conexão com o servidor via ssh
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/remote-access-ssh.sh | sh
+wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/remote-access-ssh.sh
 
 # Configurando rede do servidor
 curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/config-network-server.sh | sh
