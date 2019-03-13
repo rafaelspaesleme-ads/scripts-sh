@@ -32,3 +32,17 @@ read pass_remote
 
 # Realizando acesso via ssh
 sshpass -p "$pass_remote" ssh $user_remote@$ip_remote
+
+# Testando manipulação de dados dentro do acesso remoto
+mkdir teste
+
+touch teste.txt
+
+chmod 777 teste
+
+chmod 777 teste.txt
+
+mv -f teste.txt teste/
+
+echo 'Status do teste: '
+ls teste/
