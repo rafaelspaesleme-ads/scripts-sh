@@ -47,4 +47,4 @@ chmod -R 777 scripts-sh
 sshpass -p "$pass_remote" scp -r scripts-sh/ $user_remote@$ip_remote:/tmp 
 
 # executando comando via ssh
-sshpass -p "$pass_remote" ssh $user_remote@$ip_remote /tmp/scripts-sh/instalador_env/example.sh
+sshpass -p "$pass_remote" ssh $user_remote@$ip_remote echo -e ./teste.sh $pass_remote
