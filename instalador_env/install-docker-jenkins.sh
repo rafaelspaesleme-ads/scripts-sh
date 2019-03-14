@@ -44,7 +44,7 @@ echo 'Verifique se o container esta ativo.'
 docker ps -a
 
 # Pegando senha inicial do jenkins
-echo 'Digite o nome do container jenkins para acessar a senha admin inicial: '
+echo 'Digite o ID do container jenkins para acessar a senha admin inicial: '
 read container_jenkins
 echo 'Copie a senha e cole no navegador: (Acesse: http://seu_ip:7777)'
 docker exec $container_jenkins cat /var/jenkins_home/secrets/initialAdminPassword
