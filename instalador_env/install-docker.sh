@@ -5,8 +5,6 @@
 # Executado num ambiente Debian 8 com 2048 MB de memória;
 # Create per Rafael Paes Leme
 
-echo -e "$1\n" | sudo su -S
-
 # Instalando Docker
 echo '+========================================================+'
 echo '=== = =                                            = = ==='

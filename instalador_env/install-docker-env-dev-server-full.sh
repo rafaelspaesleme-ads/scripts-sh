@@ -38,34 +38,34 @@ apt-get install wget
 apt-get install curl
 
 # Fazendo conexão com o servidor via ssh
-wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/remote-access-ssh.sh
+# wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/remote-access-ssh.sh
 
 # Configurando rede do servidor
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/config-network-server.sh | sh
+bash ./tmp/scripts-sh/instalador_env/config-network-server.sh
 
 # Instalando ambiente Java
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-java.sh | sh
+bash ./tmp/scripts-sh/instalador_env/install-java.sh
 
 # Instalando ambiente Maven
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-maven.sh | sh
+bash ./tmp/scripts-sh/instalador_env/install-maven.sh
 
 # Instalando o Apache Tomcat7
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-tomcat.sh | sh
+bash ./tmp/scripts-sh/instalador_env/install-tomcat.sh
 
 # Instalando ambiente Git
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-git.sh | sh
+bash ./tmp/scripts-sh/instalador_env/install-git.sh
 
 # Instalando ambiente Docker
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-docker.sh | sh
+bash ./tmp/scripts-sh/instalador_env/install-docker.sh
 
 # Instalando ambiente PostgreSQL
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-docker-postgres.sh | sh
+bash ./tmp/scripts-sh/instalador_env/install-docker-postgres.sh
 
 # Instalando ambiente MySQL
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-docker-mysql.sh | sh
+bash ./tmp/scripts-sh/instalador_env/install-docker-mysql.sh
 
 # Atualizando senha root do phpMyAdmin
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/recovery-pass-mysql.sh | sh
+bash ./tmp/scripts-sh/instalador_env/recovery-pass-mysql.sh
 
 # Instalando ambiente Jenkins-client
-curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/install-docker-jenkins.sh | sh
+bash ./tmp/scripts-sh/instalador_env/install-docker-jenkins.sh

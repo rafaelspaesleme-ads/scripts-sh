@@ -20,6 +20,12 @@ read ip_remote
 echo 'Insira a senha do ambiente remoto: '
 read pass_remote
 
+# Instalando scp
+apt-get install scp
+
+# Instalando ssh
+apt-get install ssh
+
 # Instalando o controlador de password
 apt install sshpass
 
@@ -44,7 +50,10 @@ git clone https://github.com/rafaelspaesleme-ads/scripts-sh.git
 chmod -R 777 scripts-sh
 
 # transferencia de dados local para servidor
+sshpass -p "$pass_remote" scp -r scripts-sh/instalador_env/install-docker-env-dev-server-full.sh $user_remote@$ip_remote: 
 sshpass -p "$pass_remote" scp -r scripts-sh/ $user_remote@$ip_remote:/tmp 
 
-# executando comando via ssh
-sshpass -p "$pass_remote" ssh $user_remote@$ip_remote echo -e ./teste.sh $pass_remote
+rm -R scripts-sh/
+
+# executando comando via ssh echo -e "$1\n" | sudo su -S
+sshpass -p "$pass_remote" ssh $user_remote@$ip_remote
