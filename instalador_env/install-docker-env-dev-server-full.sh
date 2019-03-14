@@ -41,31 +41,31 @@ apt-get install curl
 # wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/remote-access-ssh.sh
 
 # Configurando rede do servidor
-bash ./tmp/scripts-sh/instalador_env/config-network-server.sh
+/tmp/scripts-sh/instalador_env/config-network-server.sh
 
 # Instalando ambiente Java
-bash ./tmp/scripts-sh/instalador_env/install-java.sh
+/tmp/scripts-sh/instalador_env/install-java.sh
 
 # Instalando ambiente Maven
-bash ./tmp/scripts-sh/instalador_env/install-maven.sh
+/tmp/scripts-sh/instalador_env/install-maven.sh
 
 # Instalando o Apache Tomcat7
-bash ./tmp/scripts-sh/instalador_env/install-tomcat.sh
+/tmp/scripts-sh/instalador_env/install-tomcat.sh
 
 # Instalando ambiente Git
-bash ./tmp/scripts-sh/instalador_env/install-git.sh
+/tmp/scripts-sh/instalador_env/install-git.sh
 
 # Instalando ambiente Docker
-bash ./tmp/scripts-sh/instalador_env/install-docker.sh
+/tmp/scripts-sh/instalador_env/install-docker.sh
 
 # Instalando ambiente PostgreSQL
-bash ./tmp/scripts-sh/instalador_env/install-docker-postgres.sh
+/tmp/scripts-sh/instalador_env/install-docker-postgres.sh
 
 # Instalando ambiente MySQL
-bash ./tmp/scripts-sh/instalador_env/install-docker-mysql.sh
+/tmp/scripts-sh/instalador_env/install-docker-mysql.sh
 
 # Atualizando senha root do phpMyAdmin
-bash ./tmp/scripts-sh/instalador_env/recovery-pass-mysql.sh
+/tmp/scripts-sh/instalador_env/recovery-pass-mysql.sh
 
 # Instalando ambiente Jenkins-client
-bash ./tmp/scripts-sh/instalador_env/install-docker-jenkins.sh
+/tmp/scripts-sh/instalador_env/install-docker-jenkins.sh
