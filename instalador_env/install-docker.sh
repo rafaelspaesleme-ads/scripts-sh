@@ -56,7 +56,7 @@ echo '======== VERIFICANDO INSTALAÇÕES DOCKER & COMPOSE ========'
 echo '=== = =                                            = = ==='
 echo '+========================================================+'
 # Verificando se a instalação ocorreu com sucesoo
-systemctl status docker
+# systemctl status docker
 
 # Visualizando a versão do sistema
 docker -v
