@@ -34,10 +34,10 @@ docker run -dit --name ic_server -p 7777:8080 --env JENKINS_ARGS="--prefix=/jenk
 # ProxyPass /jenkins http://localhost:7777/jenkins
 # ProxyPassReverse /jenkins http://localhost:7777/jenkins
 
-<Location "/jenkins">
-   Order allow,deny
-   Allow from all
-</Location>
+# <Location "/jenkins">
+#   Order allow,deny
+#   Allow from all
+# </Location>
 
 # Verificando se container esta em execução
 echo 'Verifique se o container esta ativo.'
@@ -46,6 +46,6 @@ docker ps -a
 # Pegando senha inicial do jenkins
 echo 'Digite o nome do container jenkins para acessar a senha admin inicial: '
 read container_jenkins
-echo 'Copie a senha e cole no navegador:'
+echo 'Copie a senha e cole no navegador: (Acesse: http://seu_ip:7777)'
 docker exec $container_jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
