@@ -37,6 +37,17 @@ apt-get install wget
 # Instalando curl
 apt-get install curl
 
+# Instalando o apache
+apt-get install apache2
+
+# Instalando o navegador lynx
+apt-get install lynx
+
+# Instalando aplicativos de rede
+apt-get install traceroute
+apt-get install tcpdump
+apt-get install wireshark
+
 # Fazendo conexão com o servidor via ssh
 # wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/remote-access-ssh.sh
 
