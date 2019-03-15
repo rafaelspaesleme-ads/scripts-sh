@@ -65,9 +65,7 @@ read sisoperation
         # executando comando via ssh echo -e "$1\n" | sudo su -S
         sshpass -p "$pass_remote" ssh $user_remote@$ip_remote
 
-    fi
-
-    if [[ $sisoperation == "w" || $sisoperation == "W" ]]; then
+    else
 
         # Realizando conexão com ambiente remoto via ssh
         echo 'Insira o usuário do ambiente remoto: '
