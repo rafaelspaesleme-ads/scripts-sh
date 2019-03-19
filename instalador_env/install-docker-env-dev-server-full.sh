@@ -80,3 +80,6 @@ apt-get install wireshark
 
 # Instalando ambiente Jenkins-client
 /tmp/scripts-sh/instalador_env/install-docker-jenkins.sh
+
+# Instalando ambiente GitLab dockerizado
+/tmp/scripts-sh/instalador_env/install-docker-gitlab.sh

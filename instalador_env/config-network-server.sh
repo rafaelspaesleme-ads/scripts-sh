@@ -50,8 +50,8 @@ read config_yes_or_no
 
         mv 01-netcfg.yaml /etc/netplan/
 
+        netplan apply
+
     else
         echo 'Configuração manual cancelada.'
     fi
-
-
