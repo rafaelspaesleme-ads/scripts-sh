@@ -16,7 +16,6 @@ read pass_actual_mysql
 mysql -u root -p$pass_actual_mysql
 docker exec -it $container_name bash
 
-
 # Altere a senha do usuário na tabela user do banco mysql:
 echo 'Digite a nova senha: '
 read nova_senha_mysql
