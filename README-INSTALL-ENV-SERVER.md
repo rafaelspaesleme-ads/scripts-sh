@@ -18,11 +18,14 @@
 - Baixe o script de **[acesso remoto via ssh]**
 - Utilize o seguinte comando: 
 
-```wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/env-server/remote-access-ssh.sh``` para realizar o download.
+```wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/env-server/remote-access-ssh.sh``` 
+para realizar o download.
 
 - Execute o script da seguinte forma: 
 
-```./remote-access-ssh.sh``` ou ```./remote-access-ssh.sh | bash```
+```./remote-access-ssh.sh``` 
+ou 
+```./remote-access-ssh.sh | bash```
 
 - Siga os passos que sera apresentado no terminal.
 
