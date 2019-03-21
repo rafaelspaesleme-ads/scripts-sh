@@ -15,7 +15,7 @@
 #### Realizando acesso remoto ao servidor:
 >Para realizar o acesso ao servidor, iremos utilizar a conexao via ```ssh``` da seguinte forma:
 
-- Baixe o script de **[acesso remoto via ssh]**
+- Baixe o script de **[acesso remoto]**  via ssh:
 
 - Utilize o seguinte comando: 
 
