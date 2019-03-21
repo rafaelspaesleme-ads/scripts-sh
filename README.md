@@ -1,19 +1,28 @@
-# SCRIPTS DE AUTOMAÇÃO DE AMBIENTE DE DESENVOLVIMENTO PROFISSIONAL
+# SCRIPTS DE AUTOMAÇÃO DE AMBIENTE PARA DESENVOLVEDORES
 
-## AMBIENTE
-Local: Linux ou Windows (Via PowerShell ou GitBash -> requer instalação.)
-Server: Linux
+## AMBIENTE PARA REALIZAR A IMPLANTACAO
+Linux ou Windows (Via PowerShell ou GitBash -> requer instalação.)
+
+## AMBIENTE DE REPOSITORIO
+Local: linux
+Server: linux
 
 ```Essa documentação ainda esta em construção.```
 ```This documentation is still under construction.```
 
 ## VERSÃO 1.0
-Passos da instalação do ambiente de desenvolvimento (Via remote shh).
 
 ```
 PASSO #1
 
-# Abra o terminal linux local (Comando atalho Ubuntu 18.04: CTRL + ALT + T)
+# Fazendo a instalacao em um ambiente local linux:
+ -> Abra o terminal linux local (Comando atalho default: CTRL + ALT + T)
+
+# Fazendo a instalacao em um ambiente local windows:
+ -> Abra o PowerShell ou baixe o GitLab atraves do seguinte endereco: 
+ [![Build Status](https://bit.ly/2Hiaox1)
+ 
+
 
 -
 
