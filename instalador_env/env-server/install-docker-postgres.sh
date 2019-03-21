@@ -53,13 +53,13 @@ docker ps
 
 # Abrindo o container na pagina web
 # Verificando qual IP da imagem em questao
-echo 'Insira o ID do container: '
-read ID_container
-docker inspect $ID_container | grep "IPAddress"
+# echo 'Insira o ID do container: '
+# read ID_container
+# docker inspect $ID_container | grep "IPAddress"
 
 # Insira o ip do pgAdmin 4
-echo 'Insira o IP do container do pgAdmin4: '
-read host_ip_pgadmin4
+# echo 'Insira o IP do container do pgAdmin4: '
+# read host_ip_pgadmin4
 
 # Abrindo url do pgAdmin 4
 # Ubuntu

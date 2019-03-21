@@ -32,34 +32,55 @@ apt-get install wireshark
 # wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/remote-access-ssh.sh
 
 # Configurando rede do servidor
-/tmp/scripts-sh/instalador_env/config-network-server.sh
+/tmp/scripts-sh/instalador_env/env-server/config-network-server.sh
 
 # Instalando ambiente Java
-/tmp/scripts-sh/instalador_env/install-java.sh
+/tmp/scripts-sh/instalador_env/env-server/install-java.sh
 
 # Instalando ambiente Maven
-# /tmp/scripts-sh/instalador_env/install-maven.sh
+# /tmp/scripts-sh/instalador_env/env-server/install-maven.sh
 
 # Instalando o Apache Tomcat7
-# /tmp/scripts-sh/instalador_env/install-tomcat.sh
+# /tmp/scripts-sh/instalador_env/env-server/install-tomcat.sh
 
 # Instalando ambiente Git
-# /tmp/scripts-sh/instalador_env/install-git.sh
+# /tmp/scripts-sh/instalador_env/env-server/install-git.sh
 
 # Instalando ambiente Docker
-/tmp/scripts-sh/instalador_env/install-docker.sh
+/tmp/scripts-sh/instalador_env/env-server/install-docker.sh
 
 # Instalando ambiente PostgreSQL
-/tmp/scripts-sh/instalador_env/install-docker-postgres.sh
+/tmp/scripts-sh/instalador_env/env-server/install-docker-postgres.sh
 
 # Instalando ambiente MySQL
-/tmp/scripts-sh/instalador_env/install-docker-mysql.sh
+/tmp/scripts-sh/instalador_env/env-server/install-docker-mysql.sh
 
 # Atualizando senha root do phpMyAdmin
-/tmp/scripts-sh/instalador_env/recovery-pass-mysql.sh
+/tmp/scripts-sh/instalador_env/env-server/recovery-pass-mysql.sh
+
+# Instalando ambiente H2
+/tmp/scripts-sh/instalador_env/env-server/install-docker-h2.sh
+
+echo -n 'Qual instalacao do Mongo deseja fazer?'
+echo -n 'Digite (c) para completa ou (b) para basica: '
+read resposta
+case "$resposta" in
+    c|C|"")
+        echo "Essa instalacao demandara muito tempo. (CTRL+C para cancelar)"
+        # Instalando ambiente H2
+        /tmp/scripts-sh/instalador_env/env-server/install-docker-cls-mongoDB.sh
+    ;;
+     b|B|"")
+        # Instalando ambiente H2
+        /tmp/scripts-sh/instalador_env/env-server/install-docker-mongoDB.sh
+    ;;
+    *)
+        echo "Invalid optional."
+    ;;
+esac
 
 # Instalando ambiente Jenkins-client
-/tmp/scripts-sh/instalador_env/install-docker-jenkins.sh
+/tmp/scripts-sh/instalador_env/env-server/install-docker-jenkins.sh
 
 # Instalando ambiente GitLab dockerizado
-/tmp/scripts-sh/instalador_env/install-docker-gitlab.sh
+/tmp/scripts-sh/instalador_env/env-server/install-docker-gitlab.sh

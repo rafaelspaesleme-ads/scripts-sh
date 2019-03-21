@@ -89,7 +89,7 @@ case "$resposta" in
         chmod -R 777 scripts-sh
 
         # transferencia de dados local para servidor
-        sshpass -p "$pass_remote" scp -r scripts-sh/instalador_env/install-docker-env-dev-server-full.sh $user_remote_linux@$ip_remote_linux: 
+        sshpass -p "$pass_remote" scp -r scripts-sh/instalador_env/env-server/install-docker-env-dev-server-full.sh $user_remote_linux@$ip_remote_linux: 
         sshpass -p "$pass_remote" scp -r scripts-sh/ $user_remote_linux@$ip_remote_linux:/tmp 
 
         rm -R scripts-sh/
@@ -112,7 +112,7 @@ case "$resposta" in
         chmod -R 777 scripts-sh
 
         # transferencia de dados local para servidor
-        scp -r scripts-sh/instalador_env/install-docker-env-dev-server-full.sh $user_remote_win@$ip_remote_win: 
+        scp -r scripts-sh/instalador_env/env-server/install-docker-env-dev-server-full.sh $user_remote_win@$ip_remote_win: 
         scp -r scripts-sh/ $user_remote_win@$ip_remote_win:/tmp 
 
         # executando comando via ssh echo -e "$1\n" | sudo su -S

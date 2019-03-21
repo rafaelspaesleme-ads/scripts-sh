@@ -48,9 +48,14 @@ docker run -d \
 # chmod 777 /var/lib/mysql    
 
 # Inserindo senha de acesso ao phpMyAdmin
+# docker exec -it mysql $nome_rede-phpmyadmin -u root -p$senha_mysql -e "ALTER USER root IDENTIFIED WITH mysql_native_password BY '$senha_phpmyadmin';"
 echo 'Crie a senha do phpMyAdmin: '
 read senha_phpmyadmin
-docker exec -it mysql $nome_rede-phpmyadmin -u root -p$senha_mysql -e "ALTER USER root IDENTIFIED WITH mysql_native_password BY '$senha_phpmyadmin';"
+mysql -u root -p$senha_mysql
+docker exec -it $nome_rede-phpmyadmin bash
+ALTER USER root IDENTIFIED WITH mysql_native_password BY "$senha_phpmyadmin";
+exit
+exit
 
 echo '+========================================================+'
 echo '=== = =                                            = = ==='
@@ -63,14 +68,14 @@ docker ps
 
 # Abrindo o container na pagina web
 # Verificando qual IP da imagem em questao
-echo 'Insira o ID do container: '
-read ID_container
-docker inspect $ID_container | grep "IPAddress"
+# echo 'Insira o ID do container: '
+# read ID_container
+# docker inspect $ID_container | grep "IPAddress"
 
 # Insira o ip do jenkins
-echo 'Insira o IP do container do phpMyAdmin: '
-read host_ip_phpMyAdmin
+# echo 'Insira o IP do container do phpMyAdmin: '
+# read host_ip_phpMyAdmin
 
 # Abrindo url do jenkins
-xdg-open http://$host_ip_phpMyAdmin:3307
-curl http://$host_ip_phpMyAdmin:3307
+# xdg-open http://$host_ip_phpMyAdmin:3307
+# curl http://$host_ip_phpMyAdmin:3307
