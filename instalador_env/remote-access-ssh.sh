@@ -6,17 +6,49 @@
 # Create per Rafael Paes Leme
 echo '+========================================================+'
 echo '=== = =                                            = = ==='
+echo '======== == -   BEM VINDO AO INSTALADOR DE   - == ========'
+echo '======== == - AUTOMATIZAÇÃO  DE  AMBIENTE DE - == ========'
+echo '======== == -   DESENVOLVIMENTO EM SERVIDOR  - == ========'
+echo '======== == -   --------------------------   - == ========'
+echo '======== == -              LINUX             - == ========'
+echo '======== == -            VERSÃO 1.0          - == ========'
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo '======== == - RECOMENDAÇÕES:                 - == ========'
+echo '== == - Windows: Via PowerShell ou Git-bash  - == ========'
+echo '== == - Download Git-bash for Windows:       - == ========'
+echo '== == - Link: https://gitforwindows.org/     - == ========'
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo '== == - Linux: Terminal local                - == ========'
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo '== == - Tenha um otimo trabalho!!!!          - == ========'
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
+echo '                                                          '
+echo '-                                                        -'
+echo '+========================================================+'
+echo '-                                                        -'
+echo '                                                          '
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
 echo '           BEM VINDO AO ACESSO REMOTO VIA SSH             '
+echo '           ----------------------------------             '
+echo '              ACESSE SEU SERVIDOR POR AQUI                '
 echo '=== = =                                            = = ==='
 echo '+========================================================+'
 
 # Iniciando configuração de rede.
-echo 'Qual seu sistema operacional?'
-echo 'Digite (w) para Windows ou (l) para linux: '
-read sisoperation
-
-    if [[ $sisoperation == "l" || $sisoperation == "L" ]]; then
-
+echo -n 'Qual seu sistema operacional local?'
+echo -n 'Digite (w) para Windows ou (l) para Linux: '
+read resposta
+case "$resposta" in
+    l|L|"")
+    
         # Realizando conexão com ambiente remoto via ssh
         echo 'Insira o usuário do ambiente remoto: '
         read user_remote_linux
@@ -65,7 +97,8 @@ read sisoperation
         # executando comando via ssh echo -e "$1\n" | sudo su -S
         sshpass -p "$pass_remote" ssh $user_remote@$ip_remote
 
-    else
+    ;;
+     w|W)
 
         # Realizando conexão com ambiente remoto via ssh
         echo 'Insira o usuário do ambiente remoto: '
@@ -85,4 +118,8 @@ read sisoperation
         # executando comando via ssh echo -e "$1\n" | sudo su -S
         ssh $user_remote_win@$ip_remote_win
 
-    fi
+    ;;
+    *)
+        echo "Optional invalid."
+    ;;
+esac

@@ -5,6 +5,12 @@
 # Executado num ambiente Debian 8 com 2048 MB de memória;
 # Create per Rafael Paes Leme
 
+# Instalando Gitlab
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo 'Iniciando instalação do Gitlab...... . . .  .  .  .   .   '
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
 # Baixando imagem docker do Gitlab
 docker pull gitlab/gitlab-ce
 
