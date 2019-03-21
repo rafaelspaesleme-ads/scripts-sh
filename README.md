@@ -20,7 +20,7 @@ PASSO #1
 
 # Fazendo a instalacao em um ambiente local windows:
  -> Abra o PowerShell ou baixe o GitLab atraves do seguinte endereco: 
- [![Git Bash](https://bit.ly/2Hiaox1.svg?branch=master)](https://bit.ly/2HIc5r7)
+ [![Git Bash](https://avatars2.githubusercontent.com/u/4571183?s=400&v=4)](https://bit.ly/2HIc5r7)
  
 
 
