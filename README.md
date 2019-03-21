@@ -1,4 +1,4 @@
-# SCRIPTS DE AUTOMAÇÃO DE AMBIENTE PARA DESENVOLVEDORES
+# AUTOMAÇÃO DE AMBIENTE PARA DESENVOLVEDORES
 
 ![![alt](https://link)](https://i.kinja-img.com/gawker-media/image/upload/s--SwOz7-5Q--/c_scale,f_auto,fl_progressive,q_80,w_800/jzq8yxubbbw7wyxmndm3.jpg)
 
