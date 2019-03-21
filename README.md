@@ -19,8 +19,7 @@ PASSO #1
  -> Abra o terminal linux local (Comando atalho default: CTRL + ALT + T)
 
 # Fazendo a instalacao em um ambiente local windows:
- -> Abra o PowerShell ou baixe o GitLab atraves do seguinte endereco: 
- [![Git Bash](https://avatars2.githubusercontent.com/u/4571183?s=400&v=4)](https://bit.ly/2HIc5r7)
+ -> Abra o PowerShell ou baixe o **[Git Bash]**: 
  
 
 
@@ -39,3 +38,5 @@ confirm connection: yes
 PASSO #3
 
 # Instalação 
+
+[Git Bash]: https://bit.ly/2HIc5r7
