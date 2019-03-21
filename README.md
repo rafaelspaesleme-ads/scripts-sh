@@ -13,12 +13,17 @@ Server: linux
 # VERSÃO 1.0
 
 
-## PASSO #1
 
-### Fazendo a instalacao em um ambiente local linux:
- -> Abra o terminal linux local (Comando atalho default: CTRL + ALT + T)
+### IMPLANTANDO AMBIENTE EM UM SERVIDOR
+**[ACESSE O DOC CORRESPONDENTE POR AQUI]**
 
-### Fazendo a instalacao em um ambiente local windows:
+
+### PASSO #1
+
+#### Iniciando a instalacao em um ambiente local linux:
+- Abra o terminal linux local (Comando atalho default: CTRL + ALT + T)
+
+#### Iniciando a instalacao em um ambiente local windows:
 - Abra o PowerShell ou baixe o **[Git Bash]**: 
 
 
@@ -36,4 +41,4 @@ PASSO #3
 
 # Instalação 
 
-[Git Bash]: https://bit.ly/2HIc5r7
+[ACESSE O DOC CORRESPONDENTE POR AQUI]: https://bit.ly/2HIc5r7
