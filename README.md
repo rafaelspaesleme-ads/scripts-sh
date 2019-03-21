@@ -12,7 +12,7 @@ Server: linux
 
 ## VERSÃO 1.0
 
-```
+
 PASSO #1
 
 # Fazendo a instalacao em um ambiente local linux:
@@ -39,5 +39,3 @@ confirm connection: yes
 PASSO #3
 
 # Instalação 
-
-```
