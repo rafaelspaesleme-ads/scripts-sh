@@ -10,24 +10,21 @@ Server: linux
 ```Essa documentação ainda esta em construção.```
 ```This documentation is still under construction.```
 
-## VERSÃO 1.0
+# VERSÃO 1.0
 
 
-PASSO #1
+## PASSO #1
 
-# Fazendo a instalacao em um ambiente local linux:
+### Fazendo a instalacao em um ambiente local linux:
  -> Abra o terminal linux local (Comando atalho default: CTRL + ALT + T)
 
-# Fazendo a instalacao em um ambiente local windows:
- -> Abra o PowerShell ou baixe o **[Git Bash]**: 
- 
+### Fazendo a instalacao em um ambiente local windows:
+- Abra o PowerShell ou baixe o **[Git Bash]**: 
 
-
--
 
 PASSO #2
 
-# Realize a conexão com seu servidor via SSH
+### Realize a conexão com seu servidor via SSH
 
 sudo ssh $user@$host_server
 password: $mypassword
