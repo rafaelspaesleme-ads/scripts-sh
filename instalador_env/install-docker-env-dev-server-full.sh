@@ -58,13 +58,13 @@ apt-get install wireshark
 /tmp/scripts-sh/instalador_env/install-java.sh
 
 # Instalando ambiente Maven
-/tmp/scripts-sh/instalador_env/install-maven.sh
+# /tmp/scripts-sh/instalador_env/install-maven.sh
 
 # Instalando o Apache Tomcat7
-/tmp/scripts-sh/instalador_env/install-tomcat.sh
+# /tmp/scripts-sh/instalador_env/install-tomcat.sh
 
 # Instalando ambiente Git
-/tmp/scripts-sh/instalador_env/install-git.sh
+# /tmp/scripts-sh/instalador_env/install-git.sh
 
 # Instalando ambiente Docker
 /tmp/scripts-sh/instalador_env/install-docker.sh

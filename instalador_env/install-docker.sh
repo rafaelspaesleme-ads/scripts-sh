@@ -35,31 +35,45 @@ systemctl enable docker
 # Startando serviço na inicialização do sistema
 systemctl start docker
 
-echo '+========================================================+'
-echo '=== = =                                            = = ==='
-echo 'Carregando instalação do docker compose... . . .  .  .  .'
-echo '=== = =                                            = = ==='
-echo '+========================================================+'
+echo -n 'Deseja instalar o docker-compose?'
+echo -n 'Digite (s) para confirmar ou (n) para cancelar: '
+read resposta
+case "$resposta" in
+    s|S|"")
 
-# Instalando o docker compose
-curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        echo '+========================================================+'
+        echo '=== = =                                            = = ==='
+        echo 'Carregando instalação do docker compose... . . .  .  .  . '
+        echo '=== = =                                            = = ==='
+        echo '+========================================================+'
 
-# Aplicando permissões
-chmod +x /usr/local/bin/docker-compose
+        # Instalando o docker compose
+        curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-# Criando link simbolico para o pasta bin em user
-ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+        # Aplicando permissões
+        chmod +x /usr/local/bin/docker-compose
 
-echo '+========================================================+'
-echo '=== = =                                            = = ==='
-echo '======== VERIFICANDO INSTALAÇÕES DOCKER & COMPOSE ========'
-echo '=== = =                                            = = ==='
-echo '+========================================================+'
-# Verificando se a instalação ocorreu com sucesoo
-# systemctl status docker
+        # Criando link simbolico para o pasta bin em user
+        ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-# Visualizando a versão do sistema
-docker -v
+        # echo '+========================================================+'
+        # echo '=== = =                                            = = ==='
+        # echo '======== VERIFICANDO INSTALAÇÕES DOCKER & COMPOSE ========'
+        # echo '=== = =                                            = = ==='
+        # echo '+========================================================+'
+        # Verificando se a instalação ocorreu com sucesoo
+        # systemctl status docker
 
-# Testando instalação
-docker-compose --version
+        # Visualizando a versão do sistema
+        # docker -v
+
+        # Testando instalação
+        # docker-compose --version
+
+    ;;
+    *)
+
+        echo "Install docker-compose canceled."
+
+    ;;
+esac

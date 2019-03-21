@@ -20,7 +20,7 @@ sudo docker run --detach \
   gitlab/gitlab-ce:latest
 
 # Acessando arquivo de configuração do GitLab
-docker exec -it gitlab /bin/bash
+docker exec -it gitlab vi /etc/gitlab/gitlab.rb
 
 # restartndo gitlab dockerizado
 docker restart gitlab
@@ -38,3 +38,5 @@ docker pull gitlab/gitlab-ce:latest
  --volume /srv/gitlab/logs:/var/log/gitlab \
  --volume /srv/gitlab/data:/var/opt/gitlab \
  gitlab/gitlab-ce:latest
+
+

@@ -12,12 +12,12 @@ echo '=== = =                                            = = ==='
 echo '+========================================================+'
 
 # Iniciando configuração de rede.
-echo 'Deseja realmente configurar sua rede manualmente?'
-echo 'Digite (s) para confirmar ou (n) para cancelar: '
-read config_yes_or_no
-
-    if [[ $config_yes_or_no == "s" || $config_yes_or_no == "S" ]]; then
-
+echo -n 'Deseja realmente configurar sua rede manualmente?'
+echo -n 'Digite (s) para confirmar ou (n) para cancelar: '
+read resposta
+case "$resposta" in
+    s|S|"")
+    
         touch 01-netcfg.yaml
         chmod 777 01-netcfg.yaml
 
@@ -52,6 +52,8 @@ read config_yes_or_no
 
         netplan apply
 
-    else
+    ;;
+    *)
         echo 'Configuração manual cancelada.'
-    fi
+    ;;
+esac
