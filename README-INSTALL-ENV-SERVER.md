@@ -39,7 +39,7 @@ ou
 
 ### PASSO #3
 
-#### Realizando acesso remoto ao servidor:
+#### Acessando remotamente o servidor e fazendo instalação do ambiente:
 >Após realizar o acesso remoto via ```ssh``` acesse seu usuário root através do seguinte comando:
 
 ```sudo su```
@@ -56,8 +56,10 @@ ou
 
 - Após este procedimento, a instalação do seu ambiente começará automaticamente. Fique atento as informações que serão solicitadas a você no decorrer da instalação.
 
+### PASSO #4
 
-- Ao termino da instalação, seu ambiente server estará pronto para uso.
+#### Acessando os serviços(containers) instalados.
+>Ao termino da instalação, seu ambiente server estará pronto para uso.
 
 - Para saber informações para acesso aos serviços instalados, basta executar o comando abaixo:
 
