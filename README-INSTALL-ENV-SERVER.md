@@ -1,4 +1,4 @@
-# REALIZANDO IMPLANTACAO DE UM AMBIENTE 100% DOCKERIZADO EM UM SERVIDOR
+# REALIZANDO IMPLANTACAO DE UM AMBIENTE 100% DOCKERIZADO EM UM SERVIDOR LINUX
 
 ![![alt](https://link)](https://i2.wp.com/itsfoss.com/wp-content/uploads/2016/11/cloud-centric-Linux-distributions.jpg)
 
