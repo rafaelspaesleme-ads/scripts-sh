@@ -26,6 +26,19 @@ docker rm $name_container
 ## Executa um container na porta local 7777 alterando a url de acesso para localhost:7777/jenkins
 docker run -dit --name ic_server -p 7777:8080 --env JENKINS_ARGS="--prefix=/jenkins" jenkins
 
+# Atualizando versao do Jenkins
+docker container exec -u 0 -it ic_server bash
+
+wget http://updates.jenkins-ci.org/download/war/2.169/jenkins.war
+
+mv ./jenkins.war /usr/share/jenkins
+
+chown jenkins:jenkins /usr/share/jenkins/jenkins.war
+
+exit
+
+docker restart ic_server
+
 ## Configura proxy reverse no apache 
 
 ## Criar arquivo de configuração do proxy reverso na pasta /etc/httpd/conf.d/jenkins.conf
