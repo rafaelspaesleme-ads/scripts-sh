@@ -15,8 +15,7 @@ echo '=== = =                                            = = ==='
 echo '+========================================================+'
 
 # Criando rede para executar o container
-echo 'Dê um nome para sua rede docker que hospedará o MySQL: '
-read nome_rede
+nome_rede=$( dialog --title 'Rede MySQL' --stdout --inputbox 'Digite um nome para sua rede MySQL: ' 0 0 )
 docker network create --driver bridge $nome_rede
 
 # Criando o container MySQL
@@ -24,8 +23,7 @@ docker network create --driver bridge $nome_rede
 mkdir -p /opt/mysql
 
 # Inserindo senha MySQL
-echo 'Crie a senha MySQL: '
-read senha_mysql
+senha_mysql=$( dialog --title 'Security MySQL' --stdout --inputbox 'Crie sua senha MySQL: ' 0 0 )
 
 # Criando container MySQL
 docker run -d \
@@ -49,8 +47,8 @@ docker run -d \
 
 # Inserindo senha de acesso ao phpMyAdmin
 # docker exec -it mysql $nome_rede-phpmyadmin -u root -p$senha_mysql -e "ALTER USER root IDENTIFIED WITH mysql_native_password BY '$senha_phpmyadmin';"
-echo 'Crie a senha do phpMyAdmin: '
-read senha_phpmyadmin
+senha_phpmyadmin=$( dialog --title 'Security phpMyAdmin' --stdout --inputbox 'Crie sua senha do phpMyAdmin: ' 0 0 )
+
 mysql -u root -p$senha_mysql
 docker exec -it $nome_rede-phpmyadmin bash
 ALTER USER root IDENTIFIED WITH mysql_native_password BY "$senha_phpmyadmin";

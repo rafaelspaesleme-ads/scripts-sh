@@ -61,18 +61,20 @@ apt-get install wireshark
 # Instalando ambiente H2
 /tmp/scripts-sh/instalador_env/env-server/install-docker-h2.sh
 
-echo -n 'Qual instalacao do Mongo deseja fazer?'
-echo -n 'Digite (c) para completa ou (b) para basica: '
-read resposta
+escolha=$( dialog --title 'MongoDO + Docker' --stdout --menu 'Escolha o tipo de instalação deseja fazer: ' 0 0 0   1 Completa 2 Basica 3 Cancelar )
+resposta=$escolha
 case "$resposta" in
-    c|C|"")
+    1)
         echo "Essa instalacao demandara muito tempo. (CTRL+C para cancelar)"
         # Instalando ambiente H2
         /tmp/scripts-sh/instalador_env/env-server/install-docker-cls-mongoDB.sh
     ;;
-     b|B|"")
+     2)
         # Instalando ambiente H2
         /tmp/scripts-sh/instalador_env/env-server/install-docker-mongoDB.sh
+    ;;
+    3)
+        echo "Instalação cancelada."
     ;;
     *)
         echo "Invalid optional."

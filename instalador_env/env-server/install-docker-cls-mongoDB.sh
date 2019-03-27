@@ -18,13 +18,9 @@ openssl rand -base64 741 > mongodb-keyfile $ chmod 600 mongodb-keyfile $ chown 9
 docker run --name mongo -v /opt/mongo/data:/data/db -v /opt/mongo:/opt/keyfile --hostname="node1" -p 27017:27017 -d mongo:2.6.5 --smallfiles
 
 # Configurando mongo
-echo "USER: admin"
-echo "Digite a senha para (user admin): "
-read senha_admin
+senha_admin=$( dialog --title 'User MongoDB' --stdout --inputbox 'Digite a senha para (user admin):' 0 0 )
 
-echo "USER: root"
-echo "Digite a senha para (user root): "
-read senha_root
+senha_root=$( dialog --title 'User MongoDB' --stdout --inputbox 'Digite a senha para (user root):' 0 0 )
 
 docker exec -it mongo /bin/bash
 mongo

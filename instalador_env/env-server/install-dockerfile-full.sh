@@ -5,20 +5,19 @@
 # Executado num ambiente Debian 8 com 2048 MB de memória;
 # Create per Rafael Paes Leme
 
-echo "Escolha o tipo de projeto a ser dockerizado"
-echo -n "(S)Java Spring - (N)Node.js - (J)Java Web - (C)Cancelar [A] "
-read resposta
+escolha=$( dialog --stdout --menu 'Escolha o tipo de projeto a ser dockerizado: ' 0 0 0   1 JavaSpring 2 Node.js 3 JavaWeb 4 Cancelar )
+resposta=$escolha
 case "$resposta" in
-    s|S|"")
+    1)
         echo "Dockerizando projeto SpringBoot..."
     ;;
-    n|N)
+    2)
         echo "Dockerizando projeto Node.js..."
     ;;
-    j|J)
+    3)
         echo "Dockerizando projeto JavaWeb..."
     ;;
-    c|C)
+    4)
         echo "Cancelando..."
     ;;
     *)
