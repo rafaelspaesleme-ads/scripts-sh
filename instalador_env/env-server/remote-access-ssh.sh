@@ -43,11 +43,11 @@ echo '=== = =                                            = = ==='
 echo '+========================================================+'
 
 # Iniciando configuração de rede.
-echo -n 'Qual seu sistema operacional local?'
-echo -n 'Digite (w) para Windows ou (l) para Linux: '
+escolha=$( dialog --title 'Tipo de Sistema Operacional' --stdout --menu 'Escolha seu sistema operacional: ' 0 0 0   1 Linux 2 Windows 3 Cancelar )
+resposta=$escolha
 read resposta
 case "$resposta" in
-    l|L|"")
+    1)
     
         # Realizando conexão com ambiente remoto via ssh
         echo 'Insira o usuário do ambiente remoto: '
@@ -98,7 +98,7 @@ case "$resposta" in
         sshpass -p "$pass_remote" ssh $user_remote@$ip_remote
 
     ;;
-     w|W)
+     2)
 
         # Realizando conexão com ambiente remoto via ssh
         echo 'Insira o usuário do ambiente remoto: '
