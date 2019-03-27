@@ -19,18 +19,18 @@
 
 - Utilize o seguinte comando: 
 
-```wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/env-server/remote-access-ssh.sh``` 
+~/ ```wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/env-server/remote-access-ssh.sh``` 
 
 para realizar o download.
 
 
 - Execute o script da seguinte forma: 
 
-```./remote-access-ssh.sh``` 
+~/ ```./remote-access-ssh.sh``` 
 
 ou 
 
-```./remote-access-ssh.sh | bash```
+~/ ```./remote-access-ssh.sh | bash```
 
 
 - Siga os passos que sera apresentado no terminal.
@@ -42,7 +42,7 @@ ou
 #### Acessando remotamente o servidor e fazendo instalação do ambiente:
 >Após realizar o acesso remoto via ```ssh``` acesse seu usuário root através do seguinte comando:
 
-```sudo su```
+~/ ```sudo su```
 
 
 - Digite a senha root do seu servidor e execute o comando abaixo: 
@@ -76,7 +76,7 @@ ou
 ~/ ```docker start <id_container>```
 
 
-- Após inicializar o serviço (container) desejado, acesse o seu navegador local digitando ```http://<ip_server>:<port_service>``` e comece a trabalhar!
+- Após inicializar o serviço (container) desejado, acesse o seu navegador local e digite o host do serviço ```http://<ip_server>:<port_service>``` para comece a trabalhar!
 
 
 
