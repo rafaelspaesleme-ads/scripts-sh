@@ -1,4 +1,4 @@
-# REALIZANDO IMPLANTACAO DO AMBIENTE EM UM SERVIDOR
+# REALIZANDO IMPLANTACAO DE UM AMBIENTE 100% DOCKERIZADO EM UM SERVIDOR
 
 ![![alt](https://link)](https://i2.wp.com/itsfoss.com/wp-content/uploads/2016/11/cloud-centric-Linux-distributions.jpg)
 
@@ -36,6 +36,46 @@ ou
 - Siga os passos que sera apresentado no terminal.
 
 >Provavelmente voce tera que informar o ```IP``` do seu servidor. Para saber o atual ```IP``` do seu servidor, execute o seguinte comando (no linux): ```ifconfig -a``` (no Windows): ```ipconfig /all```
+
+### PASSO #3
+
+#### Realizando acesso remoto ao servidor:
+>Após realizar o acesso remoto via ```ssh``` acesse seu usuário root através do seguinte comando:
+
+```sudo su```
+
+
+- Digite a senha root do seu servidor e execute o comando abaixo: 
+
+~/ ```./install-docker-env-dev-server-full.sh | sh``` 
+
+ou
+
+~/ ```./install-docker-env-dev-server-full.sh```
+
+
+- Após este procedimento, a instalação do seu ambiente começará automaticamente. Fique atento as informações que serão solicitadas a você no decorrer da instalação.
+
+
+- Ao termino da instalação, seu ambiente server estará pronto para uso.
+
+- Para saber informações para acesso aos serviços instalados, basta executar o comando abaixo:
+
+~/ ```docker ps```
+
+
+- E escolha o serviço que deseja utilziar!
+
+- Caso o serviço desejado não esteja em execução, execute os seguintes comandos para startar o serviço desejavel:
+
+~/ ```docker ps -a``` 
+
+
+~/ ```docker start <id_container>```
+
+
+- Após inicializar o serviço (container) desejado, acesse o seu navegador local digitando ```http://<ip_server>:<port_service>``` e comece a trabalhar!
+
 
 
 [Git Bash]: https://gitforwindows.org/
