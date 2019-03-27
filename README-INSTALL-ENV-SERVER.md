@@ -79,6 +79,5 @@ ou
 - Após inicializar o serviço (container) desejado, acesse o seu navegador local e digite o host do serviço ```http://<ip_server>:<port_service>``` para comece a trabalhar!
 
 
-
 [Git Bash]: https://gitforwindows.org/
 [acesso remoto via]: vhttps://github.com/rafaelspaesleme-ads/scripts-sh/blob/master/instalador_env/env-server/remote-access-ssh.sh
