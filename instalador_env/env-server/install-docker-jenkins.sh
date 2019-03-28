@@ -37,6 +37,8 @@ chown jenkins:jenkins /usr/share/jenkins/jenkins.war
 
 exit
 
+ls
+
 docker restart ic_server
 
 ## Configura proxy reverse no apache 
