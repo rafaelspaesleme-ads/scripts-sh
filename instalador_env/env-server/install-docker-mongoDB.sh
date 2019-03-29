@@ -9,8 +9,7 @@
 docker pull tutum/mongodb
 
 # Subindo container docker
-echo "Digite sua senha mongoDB (User: admin): "
-read senha_mongoDB
+senha_mongoDB=$( dialog --title 'User MongoDB' --stdout --inputbox 'Digite a senha para (user admin):' 0 0 )
 echo "Digite um nome para o container: "
 read name_container
 docker run --name $name_container -d -p 27017:27017 -p 28017:28017 -e MONGODB_PASS="$senha_mongoDB" tutum/mongodb

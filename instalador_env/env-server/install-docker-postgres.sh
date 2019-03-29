@@ -20,26 +20,22 @@ docker pull postgres
 docker pull dpage/pgadmin4 
 
 # Criando uma network para execução dos containers
-echo 'Dê um nome para sua rede docker que hospedará o PostgreSQL: '
-read nome_rede
+nome_rede=$( dialog --title 'Rede PostgreSQL' --stdout --inputbox 'Digite um nome para sua rede: ' 0 0 )
 docker network create --driver bridge $nome_rede
 
 # Verificando redes docker/ deverá aparecer então a rede postgres-network
 docker network ls 
 
 # Criando um container para executar as imagens do PostgreSQL
-echo 'Insira a senha do POSTGRES: '
-read senha_postgres
+senha_postgres=$( dialog --title 'Security PostgreSQL' --stdout --inputbox 'Crie uma senha para o serviço Postgres: ' 0 0 )
 docker run --name $nome_rede-postgres --network=$nome_rede -e "POSTGRES_PASSWORD=$senha_postgres" -p 5432:5432 -v /home/Docker/containers/PostgreSQL:/var/lib/postgresql/data -d postgres
 
 # Verificando se container esta ativo
 docker ps 
 
 # Criando um container para execução do pgAdmin 4
-echo 'Insira o email do pgAdmin4: '
-read email_pgadmin
-echo 'Insira a senha do pgAdmin4: '
-read senha_pgadmin
+email_pgadmin=$( dialog --title 'User pgAdmin4' --stdout --inputbox 'Crie um email para o serviço pgAdmin4: ' 0 0 )
+senha_pgadmin=$( dialog --title 'Security pgAdmin4' --stdout --inputbox 'Crie uma senha para o serviço pgAdmin4: ' 0 0 )
 docker run --name $nome_rede-pgadmin --network=$nome_rede -p 15432:80 -e "PGADMIN_DEFAULT_EMAIL=$email_pgadmin" -e "PGADMIN_DEFAULT_PASSWORD=$senha_pgadmin" -d dpage/pgadmin4
 
 echo '+========================================================+'

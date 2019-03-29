@@ -35,11 +35,11 @@ systemctl enable docker
 # Startando serviço na inicialização do sistema
 systemctl start docker
 
-echo -n 'Deseja instalar o docker-compose?'
-echo -n 'Digite (s) para confirmar ou (n) para cancelar: '
-read resposta
+dialog --title "INSTALAÇÃO DO DOCKER COMPOSE" \
+--backtitle "Deseja realmente instalar o docker-compose? " \
+resposta=$?
 case "$resposta" in
-    s|S|"")
+    0)
 
         echo '+========================================================+'
         echo '=== = =                                            = = ==='
@@ -71,7 +71,7 @@ case "$resposta" in
         # docker-compose --version
 
     ;;
-    *)
+    1)
 
         echo "Install docker-compose canceled."
 

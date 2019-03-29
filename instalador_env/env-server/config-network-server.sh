@@ -12,23 +12,19 @@ echo '=== = =                                            = = ==='
 echo '+========================================================+'
 
 # Iniciando configuração de rede.
-echo -n 'Deseja realmente configurar sua rede manualmente?'
-echo -n 'Digite (s) para confirmar ou (n) para cancelar: '
-read resposta
+dialog --title "CONFIGURAÇÃO DE REDE FIXA" \
+--backtitle "Deseja configurar sua rede manualmente? " \
+resposta=$?
 case "$resposta" in
-    s|S|"")
+    0)
     
         touch 01-netcfg.yaml
         chmod 777 01-netcfg.yaml
 
-        echo 'Digite o ip fixo: (Ex.: 192.168.0.170)'
-        read edit_ip_fixo
-        echo 'Digite o gateway: (Ex.: 192.168.0.1)'
-        read edit_ip_gateway
-        echo 'Digite o DNS 1: (Ex.: 8.8.8.8)'
-        read edit_dns_1
-        echo 'Digite o DNS 2: (Ex.: 8.8.4.4)'
-        read edit_dns_2
+        edit_ip_fixo=$( dialog --stdout --inputbox 'Digite o ip fixo: (Ex.: 192.168.0.170)' 0 0 )
+        edit_ip_gateway=$( dialog --stdout --inputbox 'Digite o gateway: (Ex.: 192.168.0.1)' 0 0 )
+        edit_dns_1=$( dialog --stdout --inputbox 'Digite o DNS 1: (Ex.: 8.8.8.8)' 0 0 )
+        edit_dns_2=$( dialog --stdout --inputbox 'Digite o DNS 2: (Ex.: 8.8.4.4)' 0 0 )
 
         echo "--- " >> 01-netcfg.yaml
         echo "network: " >> 01-netcfg.yaml
@@ -53,7 +49,7 @@ case "$resposta" in
         netplan apply
 
     ;;
-    *)
+    1)
         echo 'Configuração manual cancelada.'
     ;;
 esac
