@@ -18,8 +18,8 @@ Server: linux
 
 ### IMPLANTANDO AMBIENTE EM UM SERVIDOR
 **[ACESSE O DOC SERVER POR AQUI]**
-![![alt](https://link)](https://github.com/rafaelspaesleme-ads/scripts-sh/blob/master/README-INSTALL-ENV-SERVER.md)
+<a href=“https://github.com/rafaelspaesleme-ads/scripts-sh/blob/master/README-INSTALL-ENV-SERVER.md“>ENV SERVER</a>
 
 ### IMPLANTANDO AMBIENTE PARA DESENVOLVIMENTO LOCAL
 **[ACESSE O DOC LOCAL POR AQUI]**
-![![alt](https://link)](https://github.com/rafaelspaesleme-ads/scripts-sh/blob/master/README-INSTALL-ENV-LOCAL.md)
+<a href=“https://github.com/rafaelspaesleme-ads/scripts-sh/blob/master/README-INSTALL-ENV-LOCAL.md“>ENV LOCAL</a>
