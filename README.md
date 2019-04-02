@@ -20,4 +20,4 @@ Server: linux
 [ACESSE O DOC SERVER POR AQUI](https://github.com/rafaelspaesleme-ads/scripts-sh/blob/master/README-INSTALL-ENV-SERVER.md)
 
 ### IMPLANTANDO AMBIENTE PARA DESENVOLVIMENTO LOCAL
-[ACESSE O DOC SERVER POR AQUI](https://github.com/rafaelspaesleme-ads/scripts-sh/blob/master/README-INSTALL-ENV-LOCAL.md)
+[ACESSE O DOC LOCAL POR AQUI](https://github.com/rafaelspaesleme-ads/scripts-sh/blob/master/README-INSTALL-ENV-LOCAL.md)
