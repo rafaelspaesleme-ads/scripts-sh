@@ -14,5 +14,5 @@
 # wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/01-netcfg.yaml
 #!/bin/bash
 # dynbox.sh - Yes/No box demo
-nome=$( dialog --title 'TESTE' --stdout --inputbox 'Digite seu nome:' 0 0 )
-echo "O seu nome é: $nome"
+
+echo $
