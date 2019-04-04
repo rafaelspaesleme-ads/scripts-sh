@@ -34,7 +34,7 @@ case "$resposta" in
 
     chmod -R 777 $local$local_file
 
-    tar -zcf $local$backup1 $local$local_file
+    tar -R -zcf $local$backup1 $local$local_file
     chmod -R 777 $local$backup1
     mv $local$backup1 /backup/
 
