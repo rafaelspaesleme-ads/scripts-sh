@@ -14,5 +14,7 @@
 # wget https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/01-netcfg.yaml
 #!/bin/bash
 # dynbox.sh - Yes/No box demo
-
-echo $
+dialog                              \
+   --title 'Backup personalizado'  \
+   --fselect /$PWD/        \
+   0 0

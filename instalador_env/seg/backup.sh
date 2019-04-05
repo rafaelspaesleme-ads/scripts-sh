@@ -8,7 +8,6 @@
 
 # Escrevendo diretorio do arquivo ou pasta que enviará para backup
 
-hoje=$(date +"%d%m%y")
 mkdir /backup
 
 dialog                                          \
@@ -21,25 +20,28 @@ echo Retorno: $?
 
 if [ $? = 0 ]; then
 
+hoje=$(date +"%d%m%y")
+usuario=$USER
+
 escolha=$( dialog --title 'BACKUP AUTOMATIZADO' --stdout --menu 'Qual tipo de backup deseja iniciar?' 0 0 0   1 Personalizado 2 Basico 3 Completo 4 Critico )
 resposta=$escolha
 case "$resposta" in
     1)
-    local=$( dialog --title 'Backup personalizado' --stdout --inputbox 'Digite o caminho local do arquivo para backup: ' 0 0 )
-    local_file=$( dialog --title 'Backup personalizado' --stdout --inputbox 'Digite o arquivo para backup: ' 0 0 )
+    serial=$RANDOM
+    local_file=$(dialog --stdout --title "Please choose a file" --fselect $PWD/ 14 48)
 
-    chmod -R 777 /backup/*
+    chmod -R 777 /backup
 
-    backup1="person-$RANDOM-$hoje.tar"
+    backup1="person-$serial$hoje.tar"
 
-    chmod -R 777 $local$local_file
+    chmod -R 777 $local_file
 
-    tar -R -zcf $local$backup1 $local$local_file
-    chmod -R 777 $local$backup1
-    mv $local$backup1 /backup/
+    tar -R -zcf $backup1 $local_file
+    chmod -R 777 $backup1
+    mv $backup1 /backup/
 
-    chmod -R 760 $local$local_file
-    chmod -R 760 /backup/*
+    chmod -R 760 $local_file
+    chmod -R 760 /backup
     
     for i in $(seq 0 10 100) ; do sleep 1; echo $i | 
 dialog                                        \
@@ -56,16 +58,17 @@ dialog                                        \
    --gauge '\nRealizando backup basico (pasta do usuário), aguarde...'  \
    10 70 0; done
 
-   backup2="home-$RANDOM-$hoje.tar"
+   serial=$RANDOM
+   backup2="home-$serial$hoje.tar"
 
-   chmod -R 777 /backup/*
+   chmod -R 777 /backup
    chmod -R 777 /home/*
 
    tar -R -zcf $backup2 /home/*
    chmod -R 777 $backup2
    mv $backup2 /backup/
 
-   chmod -R 760 /backup/*
+   chmod -R 760 /backup
    chmod -R 760 /home/*
 
     ;;
@@ -77,16 +80,17 @@ dialog                                        \
    --gauge '\nRealizando backup completo (pasta principal do sistema), aguarde...'  \
    10 70 0; done
 
-   backup2="local-$RANDOM-$hoje.tar"
+   serial=$RANDOM
+   backup2="local-$serial$hoje.tar"
 
-   chmod -R 777 /backup/*
+   chmod -R 777 /backup
    chmod -R 777 /*
 
    tar -R -zcf $backup2 /*
    chmod -R 777 $backup2
    mv $backup2 /backup/
 
-   chmod -R 760 /backup/*
+   chmod -R 760 /backup
    chmod -R 760 /*
 
     ;;
@@ -98,17 +102,18 @@ dialog                                        \
    --gauge '\nRealizando backup critico (pasta user ou superuser), aguarde...'  \
    10 70 0; done
 
-   backup2="$USER-$RANDOM-$hoje.tar"
+   serial=$RANDOM
+   backup2="$usuario-$serial$hoje.tar"
 
-   chmod -R 777 /backup/*
-   chmod -R 777 /$USER/*
+   chmod -R 777 /backup
+   chmod -R 777 /$usuario/*
 
-   tar -R -zcf $backup2 /$USER/*
+   tar -R -zcf $backup2 /$usuario/*
    chmod -R 777 $backup2
    mv $backup2 /backup/
 
-   chmod -R 760 /backup/*
-   chmod -R 760 /$USER/*
+   chmod -R 760 /backup
+   chmod -R 760 /$usuario/*
 
     ;;
     *)
