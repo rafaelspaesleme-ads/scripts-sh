@@ -30,7 +30,7 @@ case "$resposta" in
 
     chmod -R 777 /backup/*
 
-    backup1="$local_file-$RANDOM-$hoje.tar"
+    backup1="person-$RANDOM-$hoje.tar"
 
     chmod -R 777 $local$local_file
 
