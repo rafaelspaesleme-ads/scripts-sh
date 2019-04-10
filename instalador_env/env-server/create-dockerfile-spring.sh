@@ -75,10 +75,11 @@ echo '-'
 echo '-'
 
 # Criando imagem docker da aplicação
-echo 'Digite um nome para ser sua imagem Docker: '
+echo 'Digite um nome para criar sua imagem Docker: '
 read my_image_docker
 docker build -t $my_image_docker .
 
+echo 'Criando container através da imagem criada...'
 # Usando a imagem para criar um container em execução
 docker run $my_image_docker
 
