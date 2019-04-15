@@ -16,14 +16,15 @@ echo 'Abaixo você vai inserir a imagem referente a sua aplicação.'
 echo 'Ex.: node:7'
 echo 'Fonte de pesquisa de imagens: https://hub.docker.com/_/node/'
 echo '---'
-echo 'Digite o nome da imagem desejada: '
+nome_rede=$( dialog --title 'DOCKER NODE' --stdout --inputbox 'Digite o nome da imagem desejada\n(EX.: node:7)\n\nFonte de pesquisa de imagens: https://hub.docker.com/_/node/' 0 0 )
 read image_node
 
 # COPY package.json
-echo 'Insira o nome do arquivo de configuração do node (ex.: package.json): '
+nome_rede=$( dialog --title 'DOCKER NODE' --stdout --inputbox 'Insira o nome do arquivo de configuração do node\n(ex.: package.json): ' 0 0 )
 read package_json
 
 echo 'Digite o nome do arquivo index: '
+nome_rede=$( dialog --title 'DOCKER NODE' --stdout --inputbox 'Insira o nome do arquivo de configuração do node\n(ex.: package.json): ' 0 0 )
 read file_index
 
 #Configuracao de porta
