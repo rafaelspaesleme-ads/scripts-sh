@@ -46,3 +46,31 @@ read port_app
         echo "COPY . /app" >> Dockerfile
         echo "CMD node $file_index" >> Dockerfile
         echo "EXPOSE $port_app" >> Dockerfile
+
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo '======= = -   DOCKERFILE CRIADO COM SUCESSO!   - = ======='
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
+echo '-'
+echo '-'
+echo '+========================================================+'
+echo '=== = =                                            = = ==='
+echo '======= = - INICIANDO DOCKERIZAÇÃO DA APLICAÇÃO - = ======'
+echo '=== = =                                            = = ==='
+echo '+========================================================+'
+
+echo '-'
+echo '-'
+
+# Criando imagem docker da aplicação
+echo 'Digite um nome para criar sua imagem Docker: '
+read my_image_docker
+docker build -t $my_image_docker .
+
+echo 'Criando container através da imagem criada...'
+# Usando a imagem para criar um container em execução
+docker run $my_image_docker
+
+# Verificando se container esta ativo
+docker ps
