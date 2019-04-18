@@ -21,6 +21,9 @@ echo '---'
 echo 'Insira a imagem desejada: '
 read from_image
 
+echo 'Digite a versão dessa imagem: '
+read version_image
+
 #Criando diretorio para o microservice (aplicacao)
 # WORKDIR /app
 echo 'Dê o nome ao diretorio de trabalho que ficará dentro do container:'
@@ -56,7 +59,7 @@ j_java='java'
 j_jar='-jar'
 cmd_exec="[$aspas$j_java$aspas,$aspas$j_jar$aspas,$aspas$app_jar$aspas]"
 
-echo "FROM $from_image\nWORKDIR /$workdir_app\nCOPY target/$app_jar /$version_snap\nEXPOSE $port_app\nCMD $cmd_exec" >> Dockerfile
+echo "FROM $from_image\nLABEL version='$version_image'\nWORKDIR /$workdir_app\nCOPY target/$app_jar /$version_snap\nEXPOSE $port_app\nCMD $cmd_exec" >> Dockerfile
 
 echo '+========================================================+'
 echo '=== = =                                            = = ==='

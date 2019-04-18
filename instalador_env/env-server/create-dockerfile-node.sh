@@ -19,6 +19,10 @@ echo '---'
 echo 'Digite o nome da imagem desejada: '
 read image_node
 
+# Versão da imagem
+echo 'Digite a versão da imagem: '
+read version_image
+
 # COPY package.json
 echo 'Insira o nome do arquivo de configuração do node (ex.: package.json): '
 read package_json
@@ -40,6 +44,7 @@ read port_app
 # EXPOSE 8081
 
         echo "FROM $image_node" >> Dockerfile
+        echo "LABEL version='$version_image'" >> Dockerfile
         echo "WORKDIR /app" >> Dockerfile
         echo "COPY $package_json /app" >> Dockerfile
         echo "RUN npm install" >> Dockerfile
