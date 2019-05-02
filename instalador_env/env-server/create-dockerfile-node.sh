@@ -35,14 +35,6 @@ read file_index
 echo 'Insira a porta da sua aplicação: '
 read port_app
 
-# FROM node:7
-# WORKDIR /app
-# COPY package.json /app
-# RUN npm install
-# COPY . /app
-# CMD node index.js
-# EXPOSE 8081
-
         echo "FROM $image_node" >> Dockerfile
         echo "LABEL version='$version_image'" >> Dockerfile
         echo "WORKDIR /app" >> Dockerfile
