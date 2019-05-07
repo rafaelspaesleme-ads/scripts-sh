@@ -15,7 +15,7 @@ wget https://www-us.apache.org/dist/incubator/netbeans/incubating-netbeans/incub
 unzip incubating-netbeans-10.0-bin.zip
 
 # Movendo para pasta opt
-sudo mv netbeans/ /opt/
+mv netbeans/ /opt/
 
 # Configurando arquivo para executar netbeans
 nano ~/.bashrc
