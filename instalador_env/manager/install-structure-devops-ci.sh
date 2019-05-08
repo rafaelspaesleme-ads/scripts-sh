@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Script para:
 # Script de gestão de docker personalizado
 # Execute esse script como root
@@ -14,29 +14,30 @@ FOLDER=$(dialog --stdout --title "Escolha um local para montar sua estrutura Dev
 echo "${FOLDER} DevOps - Zaal."
 
 # Criando pasta principal
-mkdir "${FOLDER}/DevOps"
+mkdir "${FOLDER}DevOps"
 
 # Criando subpastas
-mkdir "${FOLDER}/DevOps/projects"
-mkdir "${FOLDER}/DevOps/lib"
-mkdir "${FOLDER}/DevOps/trash"
-mkdir "${FOLDER}/DevOps/docs"
-mkdir "${FOLDER}/DevOps/config"
+mkdir "${FOLDER}DevOps/projects"
+mkdir "${FOLDER}DevOps/lib"
+mkdir "${FOLDER}DevOps/trash"
+mkdir "${FOLDER}DevOps/docs"
+mkdir "${FOLDER}DevOps/config"
 
 # Criando pasta de repositorio de projetos
-mkdir "${FOLDER}/DevOps/projects/repositories"
-mkdir "${FOLDER}/DevOps/projects/trash"
-mkdir "${FOLDER}/DevOps/projects/docs"
+mkdir "${FOLDER}DevOps/projects/repositories"
+mkdir "${FOLDER}DevOps/projects/trash"
+mkdir "${FOLDER}DevOps/projects/docs"
 
 # Criando workspace
 nomeProject=$( dialog --title 'STRUCTURE DEVOPS-CI' --stdout --inputbox 'Digite os nomes dos repositorios dos projetos que deseja criar!\n\nSepare-os por virgula\n\n(ex.: project-java, project-php, project-python): ' 0 0 )
 
 PROJECT_BREAK_DOWN=( `echo ${nomeProject} | sed -e 's/[,\/]/ /g'` )
 
+echo $PROJECT_BREAK_DOWN
+
 COUNTER=1
-for i in {1..$PROJECT_BREAK_DOWN}
+for i in $(seq $PROJECT_BREAK_DOWN)
 do
-   mkdir "${FOLDER}/DevOps/projects/repositories/${PROJECT_BREAK_DOWN[$COUNTER]}"
+   mkdir "${FOLDER}DevOps/projects/repositories/${PROJECT_BREAK_DOWN[$COUNTER]}"
    COUNTER=$((COUNTER+1))
 done
-
