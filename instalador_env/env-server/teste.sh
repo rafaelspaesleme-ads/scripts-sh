@@ -47,3 +47,58 @@ read port_app
         echo "COPY . /app" >> Dockerfile
         echo "CMD node $file_index" >> Dockerfile
         echo "EXPOSE $port_app" >> Dockerfile
+
+
+dialog --yesno 'Deseja Criar mais um projeto?' 0 0
+
+if [ $? = 0 ]; then
+        
+    nomeProject=$( dialog --title 'STRUCTURE DEVOPS-CI' --stdout --inputbox 'Digite um nome para seu projeto: ' 0 0 )
+    mkdir "${FOLDER}/DevOps/projects/repositories/${nomeProject}"
+
+    dialog --yesno 'Deseja Criar mais um projeto?' 0 0
+
+    if [ $? = 0 ]; then
+            
+        nomeProject=$( dialog -- 'STRUCTURE DEVOPS-CI' --stdout --inputbox 'Digite um nome para seu projeto: ' 0 0 )
+        mkdir "${FOLDER}/DevOps/projects/repositories/${nomeProject}"
+
+        dialog --yesno 'Deseja Criar mais um projeto?' 0 0
+
+        if [ $? = 0 ]; then
+                
+            nomeProject=$( dialog -- 'STRUCTURE DEVOPS-CI' --stdout --inputbox 'Digite um nome para seu projeto: ' 0 0 )
+            mkdir "${FOLDER}/DevOps/projects/repositories/${nomeProject}"
+
+            dialog --yesno 'Deseja Criar mais um projeto?' 0 0
+
+            if [ $? = 0 ]; then
+                
+                nomeProject=$( dialog -- 'STRUCTURE DEVOPS-CI' --stdout --inputbox 'Digite um nome para seu projeto: ' 0 0 )
+                mkdir "${FOLDER}/DevOps/projects/repositories/${nomeProject}"
+
+                dialog --yesno 'Deseja Criar mais um projeto?' 0 0
+
+                if [ $? = 0 ]; then
+                
+                    nomeProject=$( dialog -- 'STRUCTURE DEVOPS-CI' --stdout --inputbox 'Digite um nome para seu projeto: ' 0 0 )
+                    mkdir "${FOLDER}/DevOps/projects/repositories/${nomeProject}"
+
+                else
+                    for i in $(seq 0 10 100) ; do sleep 1; echo $i | dialog --title "STRUCTURE DEVOPS-CI" --gauge "Criando workspace..." 10 70 0; done
+                fi
+
+            else
+                for i in $(seq 0 10 100) ; do sleep 1; echo $i | dialog --title "STRUCTURE DEVOPS-CI" --gauge "Criando workspace..." 10 70 0; done
+            fi
+
+        else
+            for i in $(seq 0 10 100) ; do sleep 1; echo $i | dialog --title "STRUCTURE DEVOPS-CI" --gauge "Criando workspace..." 10 70 0; done
+        fi
+            
+    else
+        for i in $(seq 0 10 100) ; do sleep 1; echo $i | dialog --title "STRUCTURE DEVOPS-CI" --gauge "Criando workspace..." 10 70 0; done
+    fi
+else
+        for i in $(seq 0 10 100) ; do sleep 1; echo $i | dialog --title "STRUCTURE DEVOPS-CI" --gauge "Criando workspace..." 10 70 0; done
+fi
