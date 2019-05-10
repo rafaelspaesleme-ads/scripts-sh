@@ -20,7 +20,7 @@ case "$resposta" in
         npm install -g react-native-cli
 
         # init of project
-        nameProjectNative=$( dialog --title 'STRUCTURE DEVOPS-CI' --stdout --inputbox 'Digite o nome do projeto: ' 0 0 )
+        nameProjectNative=$( dialog --title 'INSTALL ENV REACT' --stdout --inputbox 'Digite o nome do projeto: ' 0 0 )
         react-native init $nameProjectNative
 
         cd $nameProjectNative
@@ -38,7 +38,7 @@ case "$resposta" in
 
         npm install -g create-react-native-app
 
-        nameProjectExpo=$( dialog --title 'STRUCTURE DEVOPS-CI' --stdout --inputbox 'Digite o nome do projeto: ' 0 0 )
+        nameProjectExpo=$( dialog --title 'INSTALL ENV REACT' --stdout --inputbox 'Digite o nome do projeto: ' 0 0 )
         create-react-native-app $nameProjectExpo
 
         cd $nameProjectExpo
