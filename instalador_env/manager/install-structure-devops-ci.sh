@@ -35,9 +35,15 @@ PROJECT_BREAK_DOWN=( `echo ${nomeProject} | sed -e 's/[,\/]/ /g'` )
 
 echo $PROJECT_BREAK_DOWN
 
-COUNTER=1
-for i in $(seq $PROJECT_BREAK_DOWN)
+for ((i=0; i<${#PROJECT_BREAK_DOWN[@]}; ++i))
 do
-   mkdir "${FOLDER}DevOps/projects/repositories/${PROJECT_BREAK_DOWN[$COUNTER]}"
-   COUNTER=$((COUNTER+1))
+   if [ -e "${FOLDER}DevOps/projects/repositories/${PROJECT_BREAK_DOWN[(($i))]}" ]
+   then
+      echo "O diretorio ${PROJECT_BREAK_DOWN[(($i))]} existe"
+   else
+      echo "Criando repositório ${PROJECT_BREAK_DOWN[(($i))]}"
+      mkdir "${FOLDER}DevOps/projects/repositories/${PROJECT_BREAK_DOWN[(($i))]}"
+   fi
 done
+
+chmod -R 756 "${FOLDER}DevOps*"
