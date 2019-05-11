@@ -11,6 +11,9 @@ echo '       INICIANDO INSTALACAO DO AMBIENTE DEV SERVER        '
 echo '=== = =                                            = = ==='
 echo '+========================================================+'
 
+# Install docker
+apt install docker.io
+
 # Instalando wget
 apt-get install wget
 
