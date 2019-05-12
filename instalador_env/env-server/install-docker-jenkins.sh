@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Script para:
 # Instalacao do ambiente Jenkins dockerizado
 # Execute esse script como root
@@ -24,18 +24,7 @@ docker stop $name_container
 docker rm $name_container
 
 ## Executa um container na porta local 7777 alterando a url de acesso para localhost:7777/jenkins
-docker run -dit --name ic_server -p 7777:8080 --env JENKINS_ARGS="--prefix=/jenkins" jenkins
-
-# Atualizando versao do Jenkins
-docker container exec -u 0 -it ic_server bash
-
-wget http://updates.jenkins-ci.org/download/war/2.169/jenkins.war
-
-mv ./jenkins.war /usr/share/jenkins
-
-chown jenkins:jenkins /usr/share/jenkins/jenkins.war
-
-exit
+docker run --name ic_server -d -v jenkins_home:/var/jenkins_home -p 7777:7777 -p 50000:50000 jenkins/jenkins:lts
 
 ls
 
