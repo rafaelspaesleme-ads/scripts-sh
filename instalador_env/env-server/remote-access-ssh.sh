@@ -94,7 +94,7 @@ case "$resposta" in
         rm -R scripts-sh/
 
         # executando comando via ssh echo -e "$1\n" | sudo su -S
-        sshpass -p "$pass_remote" ssh $user_remote@$ip_remote
+        sshpass -p "$pass_remote" ssh $user_remote_linux@$ip_remote_linux
 
     ;;
      2)
