@@ -11,6 +11,11 @@ echo '       INICIANDO INSTALACAO DO AMBIENTE DEV SERVER        '
 echo '=== = =                                            = = ==='
 echo '+========================================================+'
 
+# Install or updates package
+apt-get clean
+apt-get update
+apt-get upgrade
+
 # Install docker
 apt install docker.io
 
