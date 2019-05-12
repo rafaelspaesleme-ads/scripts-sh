@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Script para:
 # Script de acesso remoto via ssh personalizado
 # Execute esse script como root
@@ -45,7 +45,6 @@ echo '+========================================================+'
 # Iniciando configuração de rede.
 escolha=$( dialog --title 'Tipo de Sistema Operacional' --stdout --menu 'Escolha seu sistema operacional: ' 0 0 0   1 Linux 2 Windows 3 Cancelar )
 resposta=$escolha
-read resposta
 case "$resposta" in
     1)
     
