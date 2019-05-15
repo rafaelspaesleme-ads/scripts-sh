@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Criando pasta principal
-chmod 777 "/${FOLDER}"
+chmod -R 777 "/${FOLDER}"
 
 mkdir "/${FOLDER}/DevOps"
 
