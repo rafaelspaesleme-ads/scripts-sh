@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Criando ambiente DevOps') {
             steps {
-                sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/install-env-devops.sh | bash'
+                sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/create-env-devops.sh | bash'
             }
         }
     }
