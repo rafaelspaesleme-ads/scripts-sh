@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('Removendo pacotes antigos') {
+            steps {
+                sh 'rm -R ./DevOps/'
+            }
+        }
         stage('Criando ambiente DevOps') {
             steps {
                 sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/install-env-devops.sh | bash'
