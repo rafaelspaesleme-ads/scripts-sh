@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Criando ambiente DevOps') {
             steps {
+                
                 sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/install-env-ci.sh | bash'
+            
             }
         }
     }
