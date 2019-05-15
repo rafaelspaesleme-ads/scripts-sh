@@ -30,3 +30,5 @@ do
       mkdir "${FOLDER}/DevOps/projects/repositories/${PROJECT_BREAK_DOWN[(($i))]}"
    fi
 done
+
+chmod -R 777 DevOps/
