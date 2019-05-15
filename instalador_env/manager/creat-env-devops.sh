@@ -35,7 +35,7 @@ chmod -R 777 DevOps/
 
 scp -r DevOps/ $USER_ENV@$HOST_ENV:/$USER
 
-$PASS_ENV
+$PASS_ENV\n
 
 
 rm -R DevOps/
