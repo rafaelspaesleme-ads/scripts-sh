@@ -37,7 +37,7 @@ touch id_rsa.pub
 
 chmod 777 id_rsa.pub
 
-$PUBLIC_KEY >> id_rsa.pub
+echo "${PUBLIC_KEY}" >> id_rsa.pub
 
 scp -i id_rsa.pub DevOps/ $USER_ENV@$HOST_ENV:/$USER
 
