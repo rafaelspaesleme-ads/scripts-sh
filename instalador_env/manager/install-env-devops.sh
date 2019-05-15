@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # Criando pasta principal
-chmod -R 777 "/${FOLDER}"
-
 mkdir "/${FOLDER}/DevOps"
 
 # Criando subpastas
