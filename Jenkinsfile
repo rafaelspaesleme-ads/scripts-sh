@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Removendo pacotes antigos') {
             steps {
-                sh 'rm -R ./DevOps/'
+                sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/delete-last-env-devops.sh | bash'
             }
         }
         stage('Criando ambiente DevOps') {
