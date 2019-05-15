@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Criando pasta principalcc
-rm -R DevOps/
 mkdir "./DevOps"
 
 # Criando subpastas
