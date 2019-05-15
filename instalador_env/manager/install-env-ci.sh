@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Criando pasta principal
-mkdir "${FOLDER}DevOps"
+mkdir "${FOLDER}/DevOps"
 
 # Criando subpastas
 mkdir "${FOLDER}/DevOps/projects"
