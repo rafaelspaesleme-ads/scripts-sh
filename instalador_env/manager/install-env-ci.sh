@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # Criando pasta principal
 mkdir "${FOLDER}DevOps"
