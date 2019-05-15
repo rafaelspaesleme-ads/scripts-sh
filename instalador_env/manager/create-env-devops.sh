@@ -33,7 +33,7 @@ done
 
 chmod -R 777 DevOps/
 
-sshpass -p $PASS_ENV scp -r DevOps/ $USER_ENV@$HOST_ENV:/$USER
+scp -i ~/.ssh/$PUBLIC_KEY DevOps/ $USER_ENV@$HOST_ENV:/$USER
 
 
 rm -R DevOps/
