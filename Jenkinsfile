@@ -7,7 +7,6 @@ pipeline {
             }
         }
     }
-    
     post {
         always {
             echo 'Executando retornos do job.'
