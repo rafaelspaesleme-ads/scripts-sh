@@ -9,7 +9,7 @@ pipeline {
         stage('Gerando acesso via SCP/SSH') {
             steps {
                 timeout(time: 20, unit: 'SECONDS') {
-                    sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/key-generate.sh | sh'
+                    sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/ssh-key-generate.sh | sh'
                 }
             }
         }        
