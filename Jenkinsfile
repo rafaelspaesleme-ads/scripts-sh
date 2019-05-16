@@ -6,10 +6,14 @@ pipeline {
                 sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/delete-last-devops.sh | bash'
             }
         }
+        stage('Gerando acesso via SCP/SSH') {
+            steps {
+                sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/key-generate.sh | bash'
+            }
+        }        
         stage('Criando ambiente DevOps') {
             steps {
                 sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/create-env-devops.sh | bash'
-                input 'Digite sua senha:'
             }
         }
         stage('Removendo restos') {
