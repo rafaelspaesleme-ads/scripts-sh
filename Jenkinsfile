@@ -8,7 +8,9 @@ pipeline {
         }
         stage('Gerando acesso via SCP/SSH') {
             steps {
-                sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/key-generate.sh | bash'
+                timeout(time: 20, unit: 'SECONDS') {
+                    sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/key-generate.sh | bash'
+                }
             }
         }        
         stage('Criando ambiente DevOps') {
