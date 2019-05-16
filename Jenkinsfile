@@ -12,6 +12,11 @@ pipeline {
                 input 'Digite sua senha:'
             }
         }
+        stage('Removendo restos') {
+            steps {
+                sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/delete-last-devops.sh | bash'
+            }
+        }
     }
     post {
         always {
