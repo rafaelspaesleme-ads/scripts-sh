@@ -39,4 +39,4 @@ chmod -R 777 DevOps/
 
 # echo "${PUBLIC_KEY}" >> id_rsa.pub
 
-scp -i ~/.ssh/$CREATE_PPKEY.pub DevOps/ $USER_ENV@$HOST_ENV:/$USER
+scp -i ~/.ssh/$CREATE_PPKEY DevOps/ $USER_ENV@$HOST_ENV:/$USER
