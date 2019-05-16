@@ -17,6 +17,11 @@ pipeline {
             steps {
                 sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/create-env-devops.sh | bash'
             }
+        }        
+        stage('Transferindo dados para servidor') {
+            steps {
+                sh 'curl -sSL https://github.com/rafaelspaesleme-ads/scripts-sh/raw/master/instalador_env/manager/data-scp.sh | sh'
+            }
         }
         stage('Removendo restos') {
             steps {
