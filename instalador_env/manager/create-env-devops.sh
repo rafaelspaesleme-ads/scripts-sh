@@ -39,6 +39,4 @@ chmod 777 id_rsa.pub
 
 echo "${PUBLIC_KEY}" >> id_rsa.pub
 
-scp -i id_rsa.pub DevOps/ $USER_ENV@$HOST_ENV:/$USER
-
-rm -R DevOps/
+scp -r DevOps/ $USER_ENV@$HOST_ENV:/$USER
