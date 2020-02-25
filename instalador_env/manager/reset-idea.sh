@@ -1,6 +1,6 @@
 # Intellij
 
-echo Qual versão do Intellij você usa? (Ex.: 2019.3)
+echo 'Qual versão do Intellij você usa? (Ex.: 2019.3)'
 read versionIdea
 
 echo "Removing evaluation key for Intellij"
