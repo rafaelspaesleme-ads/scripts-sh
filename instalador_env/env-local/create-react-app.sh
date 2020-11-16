@@ -50,7 +50,7 @@ echo "Criando arquivos iniciais..."
 touch ${nameApp} + "/src/services/apis/api.js"
 touch ${nameApp} + "/src/services/apis/endpoints.js"
 
-if [ ${useSass} = S ];
+if [ ${useSass} = "S" ];
 then
   yarn add node-sass
   touch ${nameApp} + "/src/styles.scss"
@@ -58,12 +58,12 @@ else
   touch ${nameApp} + "/src/styles.css"
 fi  
 
-if [ ${useJsx} = S ];
+if [ ${useJsx} = "S" ];
 then
   touch ${nameApp} + "/src/App.jsx"
   touch ${nameApp} + "/src/index.jsx"
   echo "import React from 'react';\nimport {TaskPage} from './pages/TaskPage';\n\nexport const App = () => (<div/>);" >> ${nameApp} + "/src/App.jsx"
-    if [ ${useSass} = S ];
+    if [ ${useSass} = "S" ];
     then
         echo "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport './styles.scss';\nimport {App} from "./App";\n\nconst rootElement = document.getElementById('root');\nReactDOM.render(<App />, rootElement);" >> ${nameApp} + "/src/index.jsx"
     else
@@ -73,7 +73,7 @@ else
   touch ${nameApp} + "/src/App.js"
   touch ${nameApp} + "/src/index.js"
   echo "import React from 'react';\nimport {TaskPage} from './pages/TaskPage';\n\nexport const App = () => (<div/>);" >> ${nameApp} + "/src/App.js"
-    if [ ${useSass} = S ];
+    if [ ${useSass} = "S" ];
     then
         echo "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport './styles.scss';\nimport {App} from "./App";\n\nconst rootElement = document.getElementById('root');\nReactDOM.render(<App />, rootElement);" >> ${nameApp} + "/src/index.js"
     else
